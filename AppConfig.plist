@@ -4,5 +4,7 @@
 <dict>
 	<key>SignupPath</key>
 	<string>http://192.168.1.129:3000/users.json</string>
+	<key>LoginPath</key>
+	<string>http://192.168.1.129:3000/api/tokens.json</string>
 </dict>
 </plist>

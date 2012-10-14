@@ -44,6 +44,8 @@
 		B502DAD1162A78DB00DD98DB /* spinner_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAD0162A78DB00DD98DB /* spinner_background.png */; };
 		B502DAD5162A7BDE00DD98DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAD3162A7BDE00DD98DB /* LoginViewController.m */; };
 		B502DAD6162A7BDE00DD98DB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */; };
+		B502DAD9162A8F6700DD98DB /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAD8162A8F6700DD98DB /* KeychainItemWrapper.m */; };
+		B502DADB162B790700DD98DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B502DADA162B790700DD98DB /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,9 @@
 		B502DAD2162A7BDE00DD98DB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B502DAD3162A7BDE00DD98DB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B502DAD7162A8F6700DD98DB /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		B502DAD8162A8F6700DD98DB /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		B502DADA162B790700DD98DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B502DADB162B790700DD98DB /* Security.framework in Frameworks */,
 				B502DA6616291E9B00DD98DB /* UIKit.framework in Frameworks */,
 				B502DA6816291E9B00DD98DB /* Foundation.framework in Frameworks */,
 				B502DA6A16291E9B00DD98DB /* CoreGraphics.framework in Frameworks */,
@@ -147,6 +153,7 @@
 		B502DA6416291E9B00DD98DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B502DADA162B790700DD98DB /* Security.framework */,
 				B502DA6516291E9B00DD98DB /* UIKit.framework */,
 				B502DA6716291E9B00DD98DB /* Foundation.framework */,
 				B502DA6916291E9B00DD98DB /* CoreGraphics.framework */,
@@ -248,6 +255,8 @@
 				B502DACB162A637300DD98DB /* AppConfig.m */,
 				B502DACD162A77A200DD98DB /* SpinnerView.h */,
 				B502DACE162A77A200DD98DB /* SpinnerView.m */,
+				B502DAD7162A8F6700DD98DB /* KeychainItemWrapper.h */,
+				B502DAD8162A8F6700DD98DB /* KeychainItemWrapper.m */,
 			);
 			name = Classes;
 			path = ExpenseTrackr/Classes;
@@ -347,6 +356,7 @@
 				B502DACC162A637300DD98DB /* AppConfig.m in Sources */,
 				B502DACF162A77A200DD98DB /* SpinnerView.m in Sources */,
 				B502DAD5162A7BDE00DD98DB /* LoginViewController.m in Sources */,
+				B502DAD9162A8F6700DD98DB /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
