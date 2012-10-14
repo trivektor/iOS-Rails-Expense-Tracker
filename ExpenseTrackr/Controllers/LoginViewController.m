@@ -151,14 +151,18 @@
                  KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
                  
                  [keychain setObject:token forKey:(__bridge id)kSecAttrAccount];
+                 
+                 [alert setTitle:@"Alert"];
+                 [alert setMessage:@"You've logged in successfully"];
              } else {
                  [alert setTitle:@"Error"];
                  [alert setMessage:[json valueForKey:@"errors"]];
              }
              
+             [alert show];
              [self.spinnerView removeFromSuperview];
          }
-                                         failure:
+        failure:
          ^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"error: %@", [operation error]);
          }];
