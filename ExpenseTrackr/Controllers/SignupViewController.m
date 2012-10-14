@@ -6,7 +6,10 @@
 //  Copyright (c) 2012 Crafted By Tri. All rights reserved.
 //
 
+#import "AppConfig.h"
 #import "SignupViewController.h"
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface SignupViewController ()
 
@@ -75,7 +78,49 @@
 
 - (void)signup
 {
+
+    NSURL *signupURL = [NSURL URLWithString:[AppConfig getConfigValue:@"SignupPath"]];
     
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:signupURL];
+    
+    NSMutableDictionary *userParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       firstNameTextField.text, @"first_name",
+                                       lastNameTextField.text, @"last_name",
+                                       emailTextField.text, @"email",
+                                    passwordTextField.text, @"password",
+                            confirmPasswordTextField.text, @"password_confirmation",
+                                       nil];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   userParams, @"user",
+                                   nil];
+    
+    NSMutableURLRequest *postRequest = [httpClient requestWithMethod:@"POST" path:signupURL.absoluteString parameters:params];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:postRequest];
+    
+    [operation setCompletionBlockWithSuccess:
+     ^(AFHTTPRequestOperation *operation, id responseObject) {
+         NSString *response = [operation responseString];
+         
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+         
+         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+         
+         if ([[json valueForKey:@"success"] intValue] == 1) {
+             [alert setMessage:[json valueForKey:@"message"]];
+         } else {
+             [alert setMessage:[json valueForKey:@"errors"]];
+         }
+         
+         [alert show];
+     }
+    failure:
+     ^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"error: %@", [operation error]);
+    }];
+    
+    [operation start];
 }
 
 - (void)cancelSignup
