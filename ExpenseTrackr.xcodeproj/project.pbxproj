@@ -46,6 +46,10 @@
 		B502DAD6162A7BDE00DD98DB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */; };
 		B502DAD9162A8F6700DD98DB /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAD8162A8F6700DD98DB /* KeychainItemWrapper.m */; };
 		B502DADB162B790700DD98DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B502DADA162B790700DD98DB /* Security.framework */; };
+		B502DAE0162B7D1700DD98DB /* ExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DADE162B7D1700DD98DB /* ExpensesViewController.m */; };
+		B502DAE1162B7D1700DD98DB /* ExpensesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DADF162B7D1700DD98DB /* ExpensesViewController.xib */; };
+		B502DAE3162B813300DD98DB /* white_plus_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE2162B813300DD98DB /* white_plus_sign.png */; };
+		B502DAE5162B818D00DD98DB /* envelope_border.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE4162B818D00DD98DB /* envelope_border.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +114,11 @@
 		B502DAD7162A8F6700DD98DB /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		B502DAD8162A8F6700DD98DB /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		B502DADA162B790700DD98DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B502DADD162B7D1700DD98DB /* ExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpensesViewController.h; sourceTree = "<group>"; };
+		B502DADE162B7D1700DD98DB /* ExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpensesViewController.m; sourceTree = "<group>"; };
+		B502DADF162B7D1700DD98DB /* ExpensesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpensesViewController.xib; sourceTree = "<group>"; };
+		B502DAE2162B813300DD98DB /* white_plus_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_plus_sign.png; sourceTree = "<group>"; };
+		B502DAE4162B818D00DD98DB /* envelope_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = envelope_border.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +199,7 @@
 		B502DA871629205500DD98DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B502DADC162B7D0900DD98DB /* Expenses */,
 				B502DA881629207B00DD98DB /* CustomTableCellViewController.h */,
 				B502DA891629207B00DD98DB /* CustomTableCellViewController.m */,
 				B502DA8A1629207B00DD98DB /* CustomTableCellViewController.xib */,
@@ -210,6 +220,8 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B502DAE4162B818D00DD98DB /* envelope_border.png */,
+				B502DAE2162B813300DD98DB /* white_plus_sign.png */,
 				B502DAD0162A78DB00DD98DB /* spinner_background.png */,
 				B502DAA2162A53FE00DD98DB /* header.png */,
 				B502DA97162936CE00DD98DB /* btn_bg.png */,
@@ -260,6 +272,16 @@
 			);
 			name = Classes;
 			path = ExpenseTrackr/Classes;
+			sourceTree = "<group>";
+		};
+		B502DADC162B7D0900DD98DB /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				B502DADD162B7D1700DD98DB /* ExpensesViewController.h */,
+				B502DADE162B7D1700DD98DB /* ExpensesViewController.m */,
+				B502DADF162B7D1700DD98DB /* ExpensesViewController.xib */,
+			);
+			path = Expenses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +349,9 @@
 				B502DAC9162A622E00DD98DB /* AppConfig.plist in Resources */,
 				B502DAD1162A78DB00DD98DB /* spinner_background.png in Resources */,
 				B502DAD6162A7BDE00DD98DB /* LoginViewController.xib in Resources */,
+				B502DAE1162B7D1700DD98DB /* ExpensesViewController.xib in Resources */,
+				B502DAE3162B813300DD98DB /* white_plus_sign.png in Resources */,
+				B502DAE5162B818D00DD98DB /* envelope_border.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +382,7 @@
 				B502DACF162A77A200DD98DB /* SpinnerView.m in Sources */,
 				B502DAD5162A7BDE00DD98DB /* LoginViewController.m in Sources */,
 				B502DAD9162A8F6700DD98DB /* KeychainItemWrapper.m in Sources */,
+				B502DAE0162B7D1700DD98DB /* ExpensesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

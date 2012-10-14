@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "AppConfig.h"
+#import "KeychainItemWrapper.h"
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
 #import "CustomTableCellViewController.h"
 #import "HomeViewController.h"
+#import "ExpensesViewController.h"
 
 @interface UINavigationController (autorotate)
 
@@ -37,14 +42,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    HomeViewController *homeController = [[HomeViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeController];
-
-    self.window.rootViewController = navController;
+//    HomeViewController *homeController = [[HomeViewController alloc] init];
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:homeController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
     [UIApplication sharedApplication].statusBarHidden = YES;
+    [self validateAuthenticationToken];
 
     return YES;
 }
@@ -170,6 +174,25 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)validateAuthenticationToken
+{
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
+    
+    NSString *authToken = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+    
+    UINavigationController *navController;
+    
+    if (authToken) {
+        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+        navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
+    } else {
+        LoginViewController *loginController = [[LoginViewController alloc] init];
+        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
+    }
+    
+    [self.window setRootViewController:navController];
 }
 
 @end
