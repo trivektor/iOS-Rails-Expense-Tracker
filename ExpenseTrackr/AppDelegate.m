@@ -10,6 +10,23 @@
 #import "CustomTableCellViewController.h"
 #import "HomeViewController.h"
 
+@interface UINavigationController (autorotate)
+
+@end
+
+@implementation UINavigationController (autorotate)
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationPortrait;
+}
+
+-(BOOL) shouldAutorotate {
+    return NO;
+}
+
+@end
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
