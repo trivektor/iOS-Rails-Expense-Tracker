@@ -40,6 +40,8 @@
 		B502DAC3162A5F3300DD98DB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAB9162A5F3300DD98DB /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B502DAC9162A622E00DD98DB /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B502DAC8162A622E00DD98DB /* AppConfig.plist */; };
 		B502DACC162A637300DD98DB /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DACB162A637300DD98DB /* AppConfig.m */; };
+		B502DACF162A77A200DD98DB /* SpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DACE162A77A200DD98DB /* SpinnerView.m */; };
+		B502DAD1162A78DB00DD98DB /* spinner_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAD0162A78DB00DD98DB /* spinner_background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,9 @@
 		B502DAC8162A622E00DD98DB /* AppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 		B502DACA162A637300DD98DB /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		B502DACB162A637300DD98DB /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
+		B502DACD162A77A200DD98DB /* SpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerView.h; sourceTree = "<group>"; };
+		B502DACE162A77A200DD98DB /* SpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerView.m; sourceTree = "<group>"; };
+		B502DAD0162A78DB00DD98DB /* spinner_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner_background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +195,7 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B502DAD0162A78DB00DD98DB /* spinner_background.png */,
 				B502DAA2162A53FE00DD98DB /* header.png */,
 				B502DA97162936CE00DD98DB /* btn_bg.png */,
 				B502DA951629364200DD98DB /* big_logo.png */,
@@ -232,6 +238,8 @@
 			children = (
 				B502DACA162A637300DD98DB /* AppConfig.h */,
 				B502DACB162A637300DD98DB /* AppConfig.m */,
+				B502DACD162A77A200DD98DB /* SpinnerView.h */,
+				B502DACE162A77A200DD98DB /* SpinnerView.m */,
 			);
 			name = Classes;
 			path = ExpenseTrackr/Classes;
@@ -300,6 +308,7 @@
 				B502DA9D162A445200DD98DB /* SignupViewController.xib in Resources */,
 				B502DAA3162A53FE00DD98DB /* header.png in Resources */,
 				B502DAC9162A622E00DD98DB /* AppConfig.plist in Resources */,
+				B502DAD1162A78DB00DD98DB /* spinner_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +336,7 @@
 				B502DAC2162A5F3300DD98DB /* AFXMLRequestOperation.m in Sources */,
 				B502DAC3162A5F3300DD98DB /* UIImageView+AFNetworking.m in Sources */,
 				B502DACC162A637300DD98DB /* AppConfig.m in Sources */,
+				B502DACF162A77A200DD98DB /* SpinnerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

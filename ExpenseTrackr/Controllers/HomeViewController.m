@@ -40,6 +40,7 @@
 - (void)showSignupForm:(id)sender
 {
     SignupViewController *s = [[SignupViewController alloc] init];
+    [s setDelegate:self];
         
     UINavigationController *signupController = [[UINavigationController alloc] initWithRootViewController:s];
     [self presentViewController:signupController animated:YES completion:nil];
@@ -48,6 +49,11 @@
 - (void)showLoginForm:(id)sender
 {
     
+}
+
+- (void)cancelSignupForm
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

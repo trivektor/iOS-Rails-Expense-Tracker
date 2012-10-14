@@ -10,6 +10,7 @@
 #import "SignupViewController.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
+#import "SpinnerView.h"
 
 @interface SignupViewController ()
 
@@ -17,7 +18,7 @@
 
 @implementation SignupViewController
 
-@synthesize firstNameCell, lastNameCell, emailCell, passwordCell, confirmPasswordCell;
+@synthesize spinnerView, firstNameCell, lastNameCell, emailCell, passwordCell, confirmPasswordCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -113,19 +114,22 @@
              [alert setMessage:[json valueForKey:@"errors"]];
          }
          
+         [self.spinnerView removeFromSuperview];
          [alert show];
      }
     failure:
      ^(AFHTTPRequestOperation *operation, NSError *error) {
          NSLog(@"error: %@", [operation error]);
+         [self.spinnerView removeFromSuperview];
     }];
     
+    self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
     [operation start];
 }
 
 - (void)cancelSignup
 {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate cancelSignupForm];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SignupViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <SignupViewControllerCancelDelegate>
 
 - (IBAction)showSignupForm:(id)sender;
 - (IBAction)showLoginForm:(id)sender;
+
+- (void)cancelSignupForm;
 
 @end
