@@ -10,4 +10,7 @@
 
 @interface HomeViewController : UIViewController
 
+- (IBAction)showSignupForm:(id)sender;
+- (IBAction)showLoginForm:(id)sender;
+
 @end

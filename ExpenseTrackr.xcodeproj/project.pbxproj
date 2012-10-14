@@ -25,6 +25,9 @@
 		B502DA94162935A200DD98DB /* home_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DA93162935A200DD98DB /* home_bg.png */; };
 		B502DA961629364200DD98DB /* big_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DA951629364200DD98DB /* big_logo.png */; };
 		B502DA98162936CE00DD98DB /* btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DA97162936CE00DD98DB /* btn_bg.png */; };
+		B502DA9C162A445200DD98DB /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DA9A162A445200DD98DB /* SignupViewController.m */; };
+		B502DA9D162A445200DD98DB /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DA9B162A445200DD98DB /* SignupViewController.xib */; };
+		B502DAA3162A53FE00DD98DB /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAA2162A53FE00DD98DB /* header.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,10 @@
 		B502DA93162935A200DD98DB /* home_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_bg.png; path = ../../../../Desktop/iphone_dev/ExpenseTrackr/home_bg.png; sourceTree = "<group>"; };
 		B502DA951629364200DD98DB /* big_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = big_logo.png; path = ../../../../Desktop/iphone_dev/ExpenseTrackr/big_logo.png; sourceTree = "<group>"; };
 		B502DA97162936CE00DD98DB /* btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_bg.png; path = ../../../../Desktop/iphone_dev/ExpenseTrackr/btn_bg.png; sourceTree = "<group>"; };
+		B502DA99162A445200DD98DB /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		B502DA9A162A445200DD98DB /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		B502DA9B162A445200DD98DB /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		B502DAA2162A53FE00DD98DB /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +140,9 @@
 				B502DA8D1629254300DD98DB /* HomeViewController.h */,
 				B502DA8E1629254400DD98DB /* HomeViewController.m */,
 				B502DA8F1629254400DD98DB /* HomeViewController.xib */,
+				B502DA99162A445200DD98DB /* SignupViewController.h */,
+				B502DA9A162A445200DD98DB /* SignupViewController.m */,
+				B502DA9B162A445200DD98DB /* SignupViewController.xib */,
 			);
 			name = Controllers;
 			path = ExpenseTrackr/Controllers;
@@ -141,6 +151,7 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B502DAA2162A53FE00DD98DB /* header.png */,
 				B502DA97162936CE00DD98DB /* btn_bg.png */,
 				B502DA951629364200DD98DB /* big_logo.png */,
 				B502DA93162935A200DD98DB /* home_bg.png */,
@@ -209,6 +220,8 @@
 				B502DA94162935A200DD98DB /* home_bg.png in Resources */,
 				B502DA961629364200DD98DB /* big_logo.png in Resources */,
 				B502DA98162936CE00DD98DB /* btn_bg.png in Resources */,
+				B502DA9D162A445200DD98DB /* SignupViewController.xib in Resources */,
+				B502DAA3162A53FE00DD98DB /* header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +237,7 @@
 				B502DA8116291E9B00DD98DB /* ExpenseTrackr.xcdatamodeld in Sources */,
 				B502DA8B1629207B00DD98DB /* CustomTableCellViewController.m in Sources */,
 				B502DA901629254400DD98DB /* HomeViewController.m in Sources */,
+				B502DA9C162A445200DD98DB /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

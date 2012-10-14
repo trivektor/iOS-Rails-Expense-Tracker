@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "SignupViewController.h"
 
 @interface HomeViewController ()
 
@@ -34,6 +35,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)showSignupForm:(id)sender
+{
+    SignupViewController *s = [[SignupViewController alloc] init];
+        
+    UINavigationController *signupController = [[UINavigationController alloc] initWithRootViewController:s];
+    [self presentViewController:signupController animated:YES completion:nil];
+}
+
+- (void)showLoginForm:(id)sender
+{
+    
 }
 
 @end
