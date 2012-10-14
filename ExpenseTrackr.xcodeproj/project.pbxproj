@@ -42,6 +42,8 @@
 		B502DACC162A637300DD98DB /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DACB162A637300DD98DB /* AppConfig.m */; };
 		B502DACF162A77A200DD98DB /* SpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DACE162A77A200DD98DB /* SpinnerView.m */; };
 		B502DAD1162A78DB00DD98DB /* spinner_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAD0162A78DB00DD98DB /* spinner_background.png */; };
+		B502DAD5162A7BDE00DD98DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAD3162A7BDE00DD98DB /* LoginViewController.m */; };
+		B502DAD6162A7BDE00DD98DB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,9 @@
 		B502DACD162A77A200DD98DB /* SpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerView.h; sourceTree = "<group>"; };
 		B502DACE162A77A200DD98DB /* SpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerView.m; sourceTree = "<group>"; };
 		B502DAD0162A78DB00DD98DB /* spinner_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner_background.png; sourceTree = "<group>"; };
+		B502DAD2162A7BDE00DD98DB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B502DAD3162A7BDE00DD98DB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +192,9 @@
 				B502DA99162A445200DD98DB /* SignupViewController.h */,
 				B502DA9A162A445200DD98DB /* SignupViewController.m */,
 				B502DA9B162A445200DD98DB /* SignupViewController.xib */,
+				B502DAD2162A7BDE00DD98DB /* LoginViewController.h */,
+				B502DAD3162A7BDE00DD98DB /* LoginViewController.m */,
+				B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */,
 			);
 			name = Controllers;
 			path = ExpenseTrackr/Controllers;
@@ -309,6 +317,7 @@
 				B502DAA3162A53FE00DD98DB /* header.png in Resources */,
 				B502DAC9162A622E00DD98DB /* AppConfig.plist in Resources */,
 				B502DAD1162A78DB00DD98DB /* spinner_background.png in Resources */,
+				B502DAD6162A7BDE00DD98DB /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +346,7 @@
 				B502DAC3162A5F3300DD98DB /* UIImageView+AFNetworking.m in Sources */,
 				B502DACC162A637300DD98DB /* AppConfig.m in Sources */,
 				B502DACF162A77A200DD98DB /* SpinnerView.m in Sources */,
+				B502DAD5162A7BDE00DD98DB /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "SignupViewController.h"
+#import "LoginViewController.h"
 
 @interface HomeViewController ()
 
@@ -48,10 +49,19 @@
 
 - (void)showLoginForm:(id)sender
 {
+    LoginViewController *l = [[LoginViewController alloc] init];
+    [l setDelegate:self];
     
+    UINavigationController *loginController = [[UINavigationController alloc] initWithRootViewController:l];
+    [self presentViewController:loginController animated:YES completion:nil];
 }
 
 - (void)cancelSignupForm
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cancelLoginForm
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

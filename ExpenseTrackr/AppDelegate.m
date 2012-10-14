@@ -43,6 +43,9 @@
     self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
     return YES;
 }
 
