@@ -50,6 +50,8 @@
 		B502DAE1162B7D1700DD98DB /* ExpensesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DADF162B7D1700DD98DB /* ExpensesViewController.xib */; };
 		B502DAE3162B813300DD98DB /* white_plus_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE2162B813300DD98DB /* white_plus_sign.png */; };
 		B502DAE5162B818D00DD98DB /* envelope_border.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE4162B818D00DD98DB /* envelope_border.png */; };
+		B502DAE9162B835100DD98DB /* NewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAE7162B835100DD98DB /* NewExpenseViewController.m */; };
+		B502DAEA162B835100DD98DB /* NewExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE8162B835100DD98DB /* NewExpenseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,9 @@
 		B502DADF162B7D1700DD98DB /* ExpensesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpensesViewController.xib; sourceTree = "<group>"; };
 		B502DAE2162B813300DD98DB /* white_plus_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_plus_sign.png; sourceTree = "<group>"; };
 		B502DAE4162B818D00DD98DB /* envelope_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = envelope_border.png; sourceTree = "<group>"; };
+		B502DAE6162B835100DD98DB /* NewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewExpenseViewController.h; sourceTree = "<group>"; };
+		B502DAE7162B835100DD98DB /* NewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewExpenseViewController.m; sourceTree = "<group>"; };
+		B502DAE8162B835100DD98DB /* NewExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewExpenseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +285,9 @@
 				B502DADD162B7D1700DD98DB /* ExpensesViewController.h */,
 				B502DADE162B7D1700DD98DB /* ExpensesViewController.m */,
 				B502DADF162B7D1700DD98DB /* ExpensesViewController.xib */,
+				B502DAE6162B835100DD98DB /* NewExpenseViewController.h */,
+				B502DAE7162B835100DD98DB /* NewExpenseViewController.m */,
+				B502DAE8162B835100DD98DB /* NewExpenseViewController.xib */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -352,6 +360,7 @@
 				B502DAE1162B7D1700DD98DB /* ExpensesViewController.xib in Resources */,
 				B502DAE3162B813300DD98DB /* white_plus_sign.png in Resources */,
 				B502DAE5162B818D00DD98DB /* envelope_border.png in Resources */,
+				B502DAEA162B835100DD98DB /* NewExpenseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +392,7 @@
 				B502DAD5162A7BDE00DD98DB /* LoginViewController.m in Sources */,
 				B502DAD9162A8F6700DD98DB /* KeychainItemWrapper.m in Sources */,
 				B502DAE0162B7D1700DD98DB /* ExpensesViewController.m in Sources */,
+				B502DAE9162B835100DD98DB /* NewExpenseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
