@@ -9,6 +9,7 @@
 #import "NewExpenseViewController.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
+#import "CategoriesViewController.h"
 
 @interface NewExpenseViewController ()
 
@@ -147,6 +148,16 @@
             [descriptionTextField setText:@"Description"];
         }
     }
+}
+
+- (void)categoryButtonTapped:(id)sender
+{
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:nil];
+    [backButton setTintColor:[UIColor blackColor]];
+    [self.navigationItem setBackBarButtonItem:backButton];
+
+    CategoriesViewController *categoriesController = [[CategoriesViewController alloc] init];
+    [self.navigationController pushViewController:categoriesController animated:YES];
 }
 
 @end

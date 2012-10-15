@@ -57,6 +57,10 @@
 		B502DAF0162BC76700DD98DB /* icon@2x_et.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAEF162BC76700DD98DB /* icon@2x_et.png */; };
 		B502DAF2162BC78E00DD98DB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAF1162BC78E00DD98DB /* Default.png */; };
 		B502DAF4162BC79800DD98DB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAF3162BC79800DD98DB /* Default@2x.png */; };
+		B502DAF8162BD49C00DD98DB /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAF6162BD49C00DD98DB /* CategoriesViewController.m */; };
+		B502DAF9162BD49C00DD98DB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAF7162BD49C00DD98DB /* CategoriesViewController.xib */; };
+		B502DAFD162BD54900DD98DB /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFC162BD54900DD98DB /* Expense.m */; };
+		B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +138,13 @@
 		B502DAEF162BC76700DD98DB /* icon@2x_et.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x_et.png"; sourceTree = "<group>"; };
 		B502DAF1162BC78E00DD98DB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B502DAF3162BC79800DD98DB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B502DAF5162BD49C00DD98DB /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		B502DAF6162BD49C00DD98DB /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		B502DAF7162BD49C00DD98DB /* CategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		B502DAFB162BD54900DD98DB /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
+		B502DAFC162BD54900DD98DB /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		B502DAFE162BD5D500DD98DB /* ExpenseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCategory.h; sourceTree = "<group>"; };
+		B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCategory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +166,7 @@
 		B502DA5616291E9B00DD98DB = {
 			isa = PBXGroup;
 			children = (
+				B502DAFA162BD53600DD98DB /* Models */,
 				B502DAF3162BC79800DD98DB /* Default@2x.png */,
 				B502DAF1162BC78E00DD98DB /* Default.png */,
 				B502DAEF162BC76700DD98DB /* icon@2x_et.png */,
@@ -230,6 +242,9 @@
 				B502DAD2162A7BDE00DD98DB /* LoginViewController.h */,
 				B502DAD3162A7BDE00DD98DB /* LoginViewController.m */,
 				B502DAD4162A7BDE00DD98DB /* LoginViewController.xib */,
+				B502DAF5162BD49C00DD98DB /* CategoriesViewController.h */,
+				B502DAF6162BD49C00DD98DB /* CategoriesViewController.m */,
+				B502DAF7162BD49C00DD98DB /* CategoriesViewController.xib */,
 			);
 			name = Controllers;
 			path = ExpenseTrackr/Controllers;
@@ -307,6 +322,18 @@
 			path = Expenses;
 			sourceTree = "<group>";
 		};
+		B502DAFA162BD53600DD98DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B502DAFB162BD54900DD98DB /* Expense.h */,
+				B502DAFC162BD54900DD98DB /* Expense.m */,
+				B502DAFE162BD5D500DD98DB /* ExpenseCategory.h */,
+				B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */,
+			);
+			name = Models;
+			path = ExpenseTrackr/Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,6 +408,7 @@
 				B502DAF0162BC76700DD98DB /* icon@2x_et.png in Resources */,
 				B502DAF2162BC78E00DD98DB /* Default.png in Resources */,
 				B502DAF4162BC79800DD98DB /* Default@2x.png in Resources */,
+				B502DAF9162BD49C00DD98DB /* CategoriesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +441,9 @@
 				B502DAD9162A8F6700DD98DB /* KeychainItemWrapper.m in Sources */,
 				B502DAE0162B7D1700DD98DB /* ExpensesViewController.m in Sources */,
 				B502DAE9162B835100DD98DB /* NewExpenseViewController.m in Sources */,
+				B502DAF8162BD49C00DD98DB /* CategoriesViewController.m in Sources */,
+				B502DAFD162BD54900DD98DB /* Expense.m in Sources */,
+				B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

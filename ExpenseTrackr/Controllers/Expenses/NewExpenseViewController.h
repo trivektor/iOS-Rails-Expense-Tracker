@@ -35,5 +35,6 @@
 - (void)resetForm;
 - (void)saveExpense;
 - (void)dismissKeyboardForDescription;
+- (IBAction)categoryButtonTapped:(id)sender;
 
 @end

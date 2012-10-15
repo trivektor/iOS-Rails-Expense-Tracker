@@ -192,6 +192,7 @@
         navController = [[UINavigationController alloc] initWithRootViewController:loginController];
     }
     
+    [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];
     [self.window setRootViewController:navController];
 }
 
