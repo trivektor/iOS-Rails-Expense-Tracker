@@ -63,9 +63,14 @@
     [resetButton setImage:[UIImage imageNamed:@"trash_icon.png"]];
     [self.navigationItem setRightBarButtonItem:resetButton];
     
-    [scrollView setContentSize:CGSizeMake(320, 44*5 + 158)];
+    //[scrollView setContentSize:CGSizeMake(320, 480)];
     [expenseTableForm setScrollEnabled:NO];
     [expenseTableForm setAutoresizingMask:~UIViewAutoresizingFlexibleBottomMargin];
+    
+    UITapGestureRecognizer *outsideTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardForDescription)];
+    
+    [outsideTap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:outsideTap];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -112,8 +117,10 @@
     return YES;
 }
 
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+    [scrollView setContentOffset:CGPointMake(0, 210) animated:YES];
+    [textView setText:@""];
     return YES;
 }
 
@@ -129,6 +136,17 @@
 - (void)saveExpense
 {
     
+}
+
+- (void)dismissKeyboardForDescription
+{
+    if ([descriptionTextField isFirstResponder]) {
+        [descriptionTextField resignFirstResponder];
+        [scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+        if (descriptionTextField.text.length == 0) {
+            [descriptionTextField setText:@"Description"];
+        }
+    }
 }
 
 @end

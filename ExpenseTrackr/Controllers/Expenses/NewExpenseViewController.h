@@ -34,5 +34,6 @@
 - (void)performHouseKeepingTasks;
 - (void)resetForm;
 - (void)saveExpense;
+- (void)dismissKeyboardForDescription;
 
 @end
