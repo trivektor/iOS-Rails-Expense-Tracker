@@ -52,6 +52,11 @@
 		B502DAE5162B818D00DD98DB /* envelope_border.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE4162B818D00DD98DB /* envelope_border.png */; };
 		B502DAE9162B835100DD98DB /* NewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAE7162B835100DD98DB /* NewExpenseViewController.m */; };
 		B502DAEA162B835100DD98DB /* NewExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAE8162B835100DD98DB /* NewExpenseViewController.xib */; };
+		B502DAEC162B9BA200DD98DB /* trash_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAEB162B9BA200DD98DB /* trash_icon.png */; };
+		B502DAEE162BC5EF00DD98DB /* add_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAED162BC5EF00DD98DB /* add_button.png */; };
+		B502DAF0162BC76700DD98DB /* icon@2x_et.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAEF162BC76700DD98DB /* icon@2x_et.png */; };
+		B502DAF2162BC78E00DD98DB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAF1162BC78E00DD98DB /* Default.png */; };
+		B502DAF4162BC79800DD98DB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B502DAF3162BC79800DD98DB /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +129,11 @@
 		B502DAE6162B835100DD98DB /* NewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewExpenseViewController.h; sourceTree = "<group>"; };
 		B502DAE7162B835100DD98DB /* NewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewExpenseViewController.m; sourceTree = "<group>"; };
 		B502DAE8162B835100DD98DB /* NewExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewExpenseViewController.xib; sourceTree = "<group>"; };
+		B502DAEB162B9BA200DD98DB /* trash_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash_icon.png; sourceTree = "<group>"; };
+		B502DAED162BC5EF00DD98DB /* add_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_button.png; sourceTree = "<group>"; };
+		B502DAEF162BC76700DD98DB /* icon@2x_et.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x_et.png"; sourceTree = "<group>"; };
+		B502DAF1162BC78E00DD98DB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B502DAF3162BC79800DD98DB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,9 @@
 		B502DA5616291E9B00DD98DB = {
 			isa = PBXGroup;
 			children = (
+				B502DAF3162BC79800DD98DB /* Default@2x.png */,
+				B502DAF1162BC78E00DD98DB /* Default.png */,
+				B502DAEF162BC76700DD98DB /* icon@2x_et.png */,
 				B502DAC8162A622E00DD98DB /* AppConfig.plist */,
 				B502DAC4162A613100DD98DB /* Classes */,
 				B502DAA4162A5F3300DD98DB /* AFNetworking */,
@@ -225,6 +238,8 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B502DAED162BC5EF00DD98DB /* add_button.png */,
+				B502DAEB162B9BA200DD98DB /* trash_icon.png */,
 				B502DAE4162B818D00DD98DB /* envelope_border.png */,
 				B502DAE2162B813300DD98DB /* white_plus_sign.png */,
 				B502DAD0162A78DB00DD98DB /* spinner_background.png */,
@@ -361,6 +376,11 @@
 				B502DAE3162B813300DD98DB /* white_plus_sign.png in Resources */,
 				B502DAE5162B818D00DD98DB /* envelope_border.png in Resources */,
 				B502DAEA162B835100DD98DB /* NewExpenseViewController.xib in Resources */,
+				B502DAEC162B9BA200DD98DB /* trash_icon.png in Resources */,
+				B502DAEE162BC5EF00DD98DB /* add_button.png in Resources */,
+				B502DAF0162BC76700DD98DB /* icon@2x_et.png in Resources */,
+				B502DAF2162BC78E00DD98DB /* Default.png in Resources */,
+				B502DAF4162BC79800DD98DB /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

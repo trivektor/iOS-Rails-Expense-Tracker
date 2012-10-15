@@ -11,6 +11,7 @@
 @interface NewExpenseViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 {
     
+    __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UITableView *expenseTableForm;
     __weak IBOutlet UITextField *nameTextField;
     __weak IBOutlet UITextField *amountTextField;
@@ -18,6 +19,7 @@
     __weak IBOutlet UITextField *tipTextField;
     __weak IBOutlet UIButton *categoryButton;
     __weak IBOutlet UITextView *descriptionTextField;
+    __weak IBOutlet UIButton *submitButton;
 }
 
 @property (nonatomic, retain) IBOutlet UITableViewCell *nameCell;
@@ -26,8 +28,11 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *tipCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *categoryCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *descriptionCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *submitButtonCell;
 
 - (void)setDelegates;
 - (void)performHouseKeepingTasks;
+- (void)resetForm;
+- (void)saveExpense;
 
 @end

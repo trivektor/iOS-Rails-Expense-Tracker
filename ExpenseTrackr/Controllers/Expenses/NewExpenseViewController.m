@@ -7,6 +7,8 @@
 //
 
 #import "NewExpenseViewController.h"
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface NewExpenseViewController ()
 
@@ -14,7 +16,7 @@
 
 @implementation NewExpenseViewController
 
-@synthesize nameCell, amountCell, taxCell, tipCell, categoryCell, descriptionCell;
+@synthesize nameCell, amountCell, taxCell, tipCell, categoryCell, descriptionCell, submitButtonCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,7 +54,18 @@
 {
     [self.navigationItem setTitle:@"Add Expense"];
     
+    // Remove the padding of 'Description' field
     [descriptionTextField setContentInset:UIEdgeInsetsMake(-11, -8, 0, 0)];
+    
+    // Add 'Reset' button
+    UIBarButtonItem *resetButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:self action:@selector(resetForm)];
+    [resetButton setTintColor:[UIColor blackColor]];
+    [resetButton setImage:[UIImage imageNamed:@"trash_icon.png"]];
+    [self.navigationItem setRightBarButtonItem:resetButton];
+    
+    [scrollView setContentSize:CGSizeMake(320, 44*5 + 158)];
+    [expenseTableForm setScrollEnabled:NO];
+    [expenseTableForm setAutoresizingMask:~UIViewAutoresizingFlexibleBottomMargin];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -62,13 +75,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 7;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 5) {
         return 158;
+    } else if (indexPath.row == 6) {
+        return 53;
     } else {
         return 44;
     }
@@ -82,6 +97,7 @@
     if (indexPath.row == 3) return tipCell;
     if (indexPath.row == 4) return categoryCell;
     if (indexPath.row == 5) return descriptionCell;
+    if (indexPath.row == 6) return submitButtonCell;
     return nil;
 }
 
@@ -99,6 +115,20 @@
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
     return YES;
+}
+
+- (void)resetForm
+{
+    [nameTextField setText:@""];
+    [amountTextField setText:@""];
+    [taxTextField setText:@""];
+    [tipTextField setText:@""];
+    [descriptionTextField setText:@""];
+}
+
+- (void)saveExpense
+{
+    
 }
 
 @end
