@@ -67,6 +67,8 @@
 		B54DE245163311C900798A25 /* ExpenseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE243163311C900798A25 /* ExpenseDetailsViewController.xib */; };
 		B54DE2471633148A00798A25 /* ExpenseDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE2461633148A00798A25 /* ExpenseDetailCell.xib */; };
 		B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE249163314A800798A25 /* ExpenseDetailCell.m */; };
+		B54DE24F1633489D00798A25 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DE24E1633489D00798A25 /* QuartzCore.framework */; };
+		B54DE253163348E400798A25 /* SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE252163348E400798A25 /* SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +162,9 @@
 		B54DE2461633148A00798A25 /* ExpenseDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseDetailCell.xib; sourceTree = "<group>"; };
 		B54DE248163314A800798A25 /* ExpenseDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailCell.h; sourceTree = "<group>"; };
 		B54DE249163314A800798A25 /* ExpenseDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailCell.m; sourceTree = "<group>"; };
+		B54DE24E1633489D00798A25 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B54DE251163348E400798A25 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		B54DE252163348E400798A25 /* SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPullToRefresh.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54DE24F1633489D00798A25 /* QuartzCore.framework in Frameworks */,
 				B502DADB162B790700DD98DB /* Security.framework in Frameworks */,
 				B502DA6616291E9B00DD98DB /* UIKit.framework in Frameworks */,
 				B502DA6816291E9B00DD98DB /* Foundation.framework in Frameworks */,
@@ -181,6 +187,7 @@
 		B502DA5616291E9B00DD98DB = {
 			isa = PBXGroup;
 			children = (
+				B54DE250163348E300798A25 /* SVPullToRefresh */,
 				B54DE2351632883D00798A25 /* Cells */,
 				B502DAFA162BD53600DD98DB /* Models */,
 				B502DAF3162BC79800DD98DB /* Default@2x.png */,
@@ -208,6 +215,7 @@
 		B502DA6416291E9B00DD98DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B54DE24E1633489D00798A25 /* QuartzCore.framework */,
 				B502DADA162B790700DD98DB /* Security.framework */,
 				B502DA6516291E9B00DD98DB /* UIKit.framework */,
 				B502DA6716291E9B00DD98DB /* Foundation.framework */,
@@ -367,6 +375,15 @@
 			path = ExpenseTrackr/Cells;
 			sourceTree = "<group>";
 		};
+		B54DE250163348E300798A25 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				B54DE251163348E400798A25 /* SVPullToRefresh.h */,
+				B54DE252163348E400798A25 /* SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,6 +500,7 @@
 				B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */,
 				B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */,
 				B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */,
+				B54DE253163348E400798A25 /* SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

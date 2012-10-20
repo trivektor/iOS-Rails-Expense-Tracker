@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSMutableArray *expenses;
 
 - (void)performHouseKeepingTasks;
+- (void)setupPullToRefresh;
 - (void)showNewExpenseForm;
 - (void)fetchExpensesFromServer;
 

@@ -16,6 +16,7 @@
 #import "SpinnerView.h"
 #import "Expense.h"
 #import "ExpenseCell.h"
+#import "SVPullToRefresh.h"
 
 @interface ExpensesViewController ()
 
@@ -42,6 +43,7 @@
     [expensesTable setDelegate:self];
     [expensesTable setDataSource:self];
     [self performHouseKeepingTasks];
+    [self setupPullToRefresh];
     [self fetchExpensesFromServer];
 }
 
@@ -67,6 +69,13 @@
     UINib *nib = [UINib nibWithNibName:@"ExpenseCell" bundle:nil];
     
     [expensesTable registerNib:nib forCellReuseIdentifier:@"ExpenseCell"];
+}
+
+- (void)setupPullToRefresh
+{
+    [expensesTable addPullToRefreshWithActionHandler:^{
+        [self fetchExpensesFromServer];
+    }];
 }
 
 - (void)showNewExpenseForm
@@ -101,6 +110,8 @@
     [operation setCompletionBlockWithSuccess:
         ^(AFHTTPRequestOperation *operation, id responseObject){
             
+            [self.expenses removeAllObjects];
+            
             NSString *response = [operation responseString];
             
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
@@ -121,6 +132,7 @@
             }
             
             [self.spinnerView removeFromSuperview];
+            [expensesTable.pullToRefreshView stopAnimating];
         }
         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [self.spinnerView removeFromSuperview];
