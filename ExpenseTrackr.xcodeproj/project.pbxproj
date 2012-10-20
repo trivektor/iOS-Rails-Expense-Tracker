@@ -63,6 +63,10 @@
 		B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */; };
 		B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE23D16328A3E00798A25 /* ExpenseCell.m */; };
 		B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE23F16328A4D00798A25 /* ExpenseCell.xib */; };
+		B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE242163311C900798A25 /* ExpenseDetailsViewController.m */; };
+		B54DE245163311C900798A25 /* ExpenseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE243163311C900798A25 /* ExpenseDetailsViewController.xib */; };
+		B54DE2471633148A00798A25 /* ExpenseDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE2461633148A00798A25 /* ExpenseDetailCell.xib */; };
+		B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE249163314A800798A25 /* ExpenseDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +154,12 @@
 		B54DE23C16328A3E00798A25 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
 		B54DE23D16328A3E00798A25 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
 		B54DE23F16328A4D00798A25 /* ExpenseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
+		B54DE241163311C900798A25 /* ExpenseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailsViewController.h; sourceTree = "<group>"; };
+		B54DE242163311C900798A25 /* ExpenseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailsViewController.m; sourceTree = "<group>"; };
+		B54DE243163311C900798A25 /* ExpenseDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseDetailsViewController.xib; sourceTree = "<group>"; };
+		B54DE2461633148A00798A25 /* ExpenseDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseDetailCell.xib; sourceTree = "<group>"; };
+		B54DE248163314A800798A25 /* ExpenseDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailCell.h; sourceTree = "<group>"; };
+		B54DE249163314A800798A25 /* ExpenseDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +334,9 @@
 				B502DAE6162B835100DD98DB /* NewExpenseViewController.h */,
 				B502DAE7162B835100DD98DB /* NewExpenseViewController.m */,
 				B502DAE8162B835100DD98DB /* NewExpenseViewController.xib */,
+				B54DE241163311C900798A25 /* ExpenseDetailsViewController.h */,
+				B54DE242163311C900798A25 /* ExpenseDetailsViewController.m */,
+				B54DE243163311C900798A25 /* ExpenseDetailsViewController.xib */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -346,6 +359,9 @@
 				B54DE23C16328A3E00798A25 /* ExpenseCell.h */,
 				B54DE23D16328A3E00798A25 /* ExpenseCell.m */,
 				B54DE23F16328A4D00798A25 /* ExpenseCell.xib */,
+				B54DE2461633148A00798A25 /* ExpenseDetailCell.xib */,
+				B54DE248163314A800798A25 /* ExpenseDetailCell.h */,
+				B54DE249163314A800798A25 /* ExpenseDetailCell.m */,
 			);
 			name = Cells;
 			path = ExpenseTrackr/Cells;
@@ -427,6 +443,8 @@
 				B502DAF4162BC79800DD98DB /* Default@2x.png in Resources */,
 				B502DAF9162BD49C00DD98DB /* CategoriesViewController.xib in Resources */,
 				B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */,
+				B54DE245163311C900798A25 /* ExpenseDetailsViewController.xib in Resources */,
+				B54DE2471633148A00798A25 /* ExpenseDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +481,8 @@
 				B502DAFD162BD54900DD98DB /* Expense.m in Sources */,
 				B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */,
 				B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */,
+				B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */,
+				B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

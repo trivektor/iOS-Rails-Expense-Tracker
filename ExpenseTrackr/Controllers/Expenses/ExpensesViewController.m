@@ -8,6 +8,7 @@
 
 #import "ExpensesViewController.h"
 #import "NewExpenseViewController.h"
+#import "ExpenseDetailsViewController.h"
 #import "KeychainItemWrapper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
@@ -168,6 +169,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Expense *e = [self.expenses objectAtIndex:indexPath.row];
+    ExpenseDetailsViewController *expenseDetailsController = [[ExpenseDetailsViewController alloc] init];
+    [expenseDetailsController setExpense:e];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:nil];
+    [backButton setTintColor:[UIColor blackColor]];
+    
+    [self.navigationItem setBackBarButtonItem:backButton];
+    [self.navigationController pushViewController:expenseDetailsController animated:YES];
 }
 
 @end
