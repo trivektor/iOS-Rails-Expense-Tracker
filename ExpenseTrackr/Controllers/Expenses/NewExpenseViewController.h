@@ -29,11 +29,12 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *categoryCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *descriptionCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *submitButtonCell;
+@property (nonatomic, retain) UIView *spinnerView;
 
 - (void)setDelegates;
 - (void)performHouseKeepingTasks;
 - (void)resetForm;
-- (void)saveExpense;
+- (IBAction)saveExpense:(id)sender;
 - (void)dismissKeyboardForDescription;
 - (IBAction)categoryButtonTapped:(id)sender;
 

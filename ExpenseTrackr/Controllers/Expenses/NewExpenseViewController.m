@@ -10,6 +10,9 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "CategoriesViewController.h"
+#import "AppConfig.h"
+#import "SpinnerView.h"
+#import "KeychainItemWrapper.h"
 
 @interface NewExpenseViewController ()
 
@@ -17,7 +20,7 @@
 
 @implementation NewExpenseViewController
 
-@synthesize nameCell, amountCell, taxCell, tipCell, categoryCell, descriptionCell, submitButtonCell;
+@synthesize nameCell, amountCell, taxCell, tipCell, categoryCell, descriptionCell, submitButtonCell, spinnerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -134,9 +137,57 @@
     [descriptionTextField setText:@""];
 }
 
-- (void)saveExpense
+- (IBAction)saveExpense:(id)sender
 {
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
     
+    NSString *authToken = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+
+    NSURL *createExpenseURL = [NSURL URLWithString:[AppConfig getConfigValue:@"CreateExpensePath"]];
+    
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:createExpenseURL];
+    
+    NSMutableDictionary *expenseParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           nameTextField.text, @"name",
+                                           amountTextField.text, @"amount",
+                                           taxTextField.text, @"tax",
+                                           tipTextField.text, @"tip",
+                                           descriptionTextField.text, @"description",
+                                           nil];
+                                          
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                    expenseParams, @"expense",
+                                    authToken, @"token",
+                                    nil];
+                                   
+    NSMutableURLRequest *postRequest = [httpClient requestWithMethod:@"POST" path:createExpenseURL.absoluteString parameters:params];
+
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:postRequest];
+                                        
+    [operation setCompletionBlockWithSuccess:
+        ^(AFHTTPRequestOperation *operation, id responseObject){
+            NSString *response = [operation responseString];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+            
+            if ([[json valueForKey:@"success"] intValue] == 1) {
+                [alert setMessage:[json valueForKey:@"message"]];
+            } else {
+                [alert setMessage:[json valueForKey:@"errors"]];
+            }
+            
+            [alert show];
+            [self.spinnerView removeFromSuperview];
+        }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self.spinnerView removeFromSuperview];
+        }
+    ];
+    
+    self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
+    [operation start];
 }
 
 - (void)dismissKeyboardForDescription
