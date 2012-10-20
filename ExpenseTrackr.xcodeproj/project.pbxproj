@@ -61,6 +61,8 @@
 		B502DAF9162BD49C00DD98DB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B502DAF7162BD49C00DD98DB /* CategoriesViewController.xib */; };
 		B502DAFD162BD54900DD98DB /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFC162BD54900DD98DB /* Expense.m */; };
 		B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */; };
+		B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE23D16328A3E00798A25 /* ExpenseCell.m */; };
+		B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE23F16328A4D00798A25 /* ExpenseCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +147,9 @@
 		B502DAFC162BD54900DD98DB /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
 		B502DAFE162BD5D500DD98DB /* ExpenseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCategory.h; sourceTree = "<group>"; };
 		B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCategory.m; sourceTree = "<group>"; };
+		B54DE23C16328A3E00798A25 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
+		B54DE23D16328A3E00798A25 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
+		B54DE23F16328A4D00798A25 /* ExpenseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +171,7 @@
 		B502DA5616291E9B00DD98DB = {
 			isa = PBXGroup;
 			children = (
+				B54DE2351632883D00798A25 /* Cells */,
 				B502DAFA162BD53600DD98DB /* Models */,
 				B502DAF3162BC79800DD98DB /* Default@2x.png */,
 				B502DAF1162BC78E00DD98DB /* Default.png */,
@@ -334,6 +340,17 @@
 			path = ExpenseTrackr/Models;
 			sourceTree = "<group>";
 		};
+		B54DE2351632883D00798A25 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B54DE23C16328A3E00798A25 /* ExpenseCell.h */,
+				B54DE23D16328A3E00798A25 /* ExpenseCell.m */,
+				B54DE23F16328A4D00798A25 /* ExpenseCell.xib */,
+			);
+			name = Cells;
+			path = ExpenseTrackr/Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,6 +426,7 @@
 				B502DAF2162BC78E00DD98DB /* Default.png in Resources */,
 				B502DAF4162BC79800DD98DB /* Default@2x.png in Resources */,
 				B502DAF9162BD49C00DD98DB /* CategoriesViewController.xib in Resources */,
+				B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +462,7 @@
 				B502DAF8162BD49C00DD98DB /* CategoriesViewController.m in Sources */,
 				B502DAFD162BD54900DD98DB /* Expense.m in Sources */,
 				B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */,
+				B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +571,7 @@
 				B502DA8616291E9B00DD98DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

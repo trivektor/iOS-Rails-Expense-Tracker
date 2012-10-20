@@ -10,9 +10,11 @@
 
 @interface ExpensesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-    
     __weak IBOutlet UITableView *expensesTable;
 }
+
+@property (nonatomic, retain) UIView *spinnerView;
+@property (nonatomic, retain) NSMutableArray *expenses;
 
 - (void)performHouseKeepingTasks;
 - (void)showNewExpenseForm;

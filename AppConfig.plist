@@ -8,6 +8,8 @@
 	<string>http://192.168.0.11:3000/api/tokens/validate.json</string>
 	<key>SignupPath</key>
 	<string>http://192.168.0.11:3000/users.json</string>
+	<key>ExpensesIndexPath</key>
+	<string>http://192.168.0.11:3000/api/expenses</string>
 	<key>LoginPath</key>
 	<string>http://192.168.0.11:3000/api/tokens.json</string>
 </dict>
