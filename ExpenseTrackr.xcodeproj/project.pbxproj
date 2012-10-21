@@ -69,6 +69,9 @@
 		B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE249163314A800798A25 /* ExpenseDetailCell.m */; };
 		B54DE24F1633489D00798A25 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DE24E1633489D00798A25 /* QuartzCore.framework */; };
 		B54DE253163348E400798A25 /* SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE252163348E400798A25 /* SVPullToRefresh.m */; };
+		B54DE25516339D8C00798A25 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25416339D8C00798A25 /* list_icon.png */; };
+		B54DE25916339E3600798A25 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE25716339E3600798A25 /* DashboardViewController.m */; };
+		B54DE25A16339E3600798A25 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25816339E3600798A25 /* DashboardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +168,10 @@
 		B54DE24E1633489D00798A25 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B54DE251163348E400798A25 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		B54DE252163348E400798A25 /* SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPullToRefresh.m; sourceTree = "<group>"; };
+		B54DE25416339D8C00798A25 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
+		B54DE25616339E3600798A25 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		B54DE25716339E3600798A25 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		B54DE25816339E3600798A25 /* DashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +276,9 @@
 				B502DAF5162BD49C00DD98DB /* CategoriesViewController.h */,
 				B502DAF6162BD49C00DD98DB /* CategoriesViewController.m */,
 				B502DAF7162BD49C00DD98DB /* CategoriesViewController.xib */,
+				B54DE25616339E3600798A25 /* DashboardViewController.h */,
+				B54DE25716339E3600798A25 /* DashboardViewController.m */,
+				B54DE25816339E3600798A25 /* DashboardViewController.xib */,
 			);
 			name = Controllers;
 			path = ExpenseTrackr/Controllers;
@@ -277,6 +287,7 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B54DE25416339D8C00798A25 /* list_icon.png */,
 				B502DAED162BC5EF00DD98DB /* add_button.png */,
 				B502DAEB162B9BA200DD98DB /* trash_icon.png */,
 				B502DAE4162B818D00DD98DB /* envelope_border.png */,
@@ -462,6 +473,8 @@
 				B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */,
 				B54DE245163311C900798A25 /* ExpenseDetailsViewController.xib in Resources */,
 				B54DE2471633148A00798A25 /* ExpenseDetailCell.xib in Resources */,
+				B54DE25516339D8C00798A25 /* list_icon.png in Resources */,
+				B54DE25A16339E3600798A25 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +514,7 @@
 				B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */,
 				B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */,
 				B54DE253163348E400798A25 /* SVPullToRefresh.m in Sources */,
+				B54DE25916339E3600798A25 /* DashboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

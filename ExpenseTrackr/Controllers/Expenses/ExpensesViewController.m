@@ -9,6 +9,7 @@
 #import "ExpensesViewController.h"
 #import "NewExpenseViewController.h"
 #import "ExpenseDetailsViewController.h"
+#import "DashboardViewController.h"
 #import "KeychainItemWrapper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
@@ -66,6 +67,11 @@
     [newExpenseButton setTintColor:[UIColor blackColor]];
     [self.navigationItem setRightBarButtonItem:newExpenseButton];
     
+    UIBarButtonItem *dashboardButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(showDashboard)];
+    [dashboardButton setImage:[UIImage imageNamed:@"list_icon.png"]];
+    [dashboardButton setTintColor:[UIColor blackColor]];
+    [self.navigationItem setLeftBarButtonItem:dashboardButton];
+    
     UINib *nib = [UINib nibWithNibName:@"ExpenseCell" bundle:nil];
     
     [expensesTable registerNib:nib forCellReuseIdentifier:@"ExpenseCell"];
@@ -76,6 +82,17 @@
     [expensesTable addPullToRefreshWithActionHandler:^{
         [self fetchExpensesFromServer];
     }];
+}
+
+- (void)showDashboard
+{
+    DashboardViewController *dashboardController = [[DashboardViewController alloc] init];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:nil];
+    [backButton setTintColor:[UIColor blackColor]];
+    [self.navigationItem setBackBarButtonItem:backButton];
+    
+    [self.navigationController pushViewController:dashboardController animated:YES];
 }
 
 - (void)showNewExpenseForm

@@ -19,6 +19,7 @@
 - (void)performHouseKeepingTasks;
 - (void)setupPullToRefresh;
 - (void)showNewExpenseForm;
+- (void)showDashboard;
 - (void)fetchExpensesFromServer;
 - (NSString *)getAuthenticationToken;
 
