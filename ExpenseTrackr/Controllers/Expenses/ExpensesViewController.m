@@ -164,7 +164,7 @@
         cell.nameLabel.text = e.name;
     }
     
-    cell.amountLabel.text = [NSString stringWithFormat:@"$%.02f", e.amount];
+    cell.amountLabel.text = [NSString stringWithFormat:@"$%g", e.amount];
     cell.createdAtLabel.text = e.createdAt;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
