@@ -14,6 +14,7 @@
 #import "CustomTableCellViewController.h"
 #import "HomeViewController.h"
 #import "ExpensesViewController.h"
+#import "SigninViewController.h"
 
 @interface UINavigationController (autorotate)
 
@@ -184,13 +185,15 @@
     
     UINavigationController *navController;
     
-    if (authToken) {
-        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
-        navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
-    } else {
-        LoginViewController *loginController = [[LoginViewController alloc] init];
-        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
-    }
+//    if (authToken) {
+//        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+//        navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
+//    } else {
+//        LoginViewController *loginController = [[LoginViewController alloc] init];
+//        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
+//    }
+    SigninViewController *signinController = [[SigninViewController alloc] init];
+    navController = [[UINavigationController alloc] initWithRootViewController:signinController];
     
     [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];
     [self.window setRootViewController:navController];

@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>CreateExpensePath</key>
-	<string>http://192.168.0.11:3000/api/expenses</string>
+	<string>http://thawing-oasis-5679.herokuapp.com/api/expenses</string>
 	<key>TokenValidationPath</key>
-	<string>http://192.168.0.11:3000/api/tokens/validate.json</string>
+	<string>http://thawing-oasis-5679.herokuapp.com/api/tokens/validate.json</string>
 	<key>SignupPath</key>
-	<string>http://192.168.0.11:3000/users.json</string>
+	<string>http://thawing-oasis-5679.herokuapp.com/users.json</string>
 	<key>ExpensesIndexPath</key>
-	<string>http://192.168.0.11:3000/api/expenses</string>
+	<string>http://thawing-oasis-5679.herokuapp.com/api/expenses</string>
 	<key>LoginPath</key>
-	<string>http://192.168.0.11:3000/api/tokens.json</string>
+	<string>http://thawing-oasis-5679.herokuapp.com/users/sign_in</string>
 </dict>
 </plist>

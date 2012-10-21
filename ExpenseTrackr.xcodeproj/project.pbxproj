@@ -72,6 +72,8 @@
 		B54DE25516339D8C00798A25 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25416339D8C00798A25 /* list_icon.png */; };
 		B54DE25916339E3600798A25 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE25716339E3600798A25 /* DashboardViewController.m */; };
 		B54DE25A16339E3600798A25 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25816339E3600798A25 /* DashboardViewController.xib */; };
+		B54DE25F1633C68B00798A25 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE25D1633C68B00798A25 /* SigninViewController.m */; };
+		B54DE2601633C68B00798A25 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25E1633C68B00798A25 /* SigninViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +174,9 @@
 		B54DE25616339E3600798A25 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		B54DE25716339E3600798A25 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		B54DE25816339E3600798A25 /* DashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		B54DE25C1633C68B00798A25 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		B54DE25D1633C68B00798A25 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
+		B54DE25E1633C68B00798A25 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +265,7 @@
 		B502DA871629205500DD98DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B54DE25B1633C67D00798A25 /* Authentication */,
 				B502DADC162B7D0900DD98DB /* Expenses */,
 				B502DA881629207B00DD98DB /* CustomTableCellViewController.h */,
 				B502DA891629207B00DD98DB /* CustomTableCellViewController.m */,
@@ -395,6 +401,16 @@
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
+		B54DE25B1633C67D00798A25 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B54DE25C1633C68B00798A25 /* SigninViewController.h */,
+				B54DE25D1633C68B00798A25 /* SigninViewController.m */,
+				B54DE25E1633C68B00798A25 /* SigninViewController.xib */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +491,7 @@
 				B54DE2471633148A00798A25 /* ExpenseDetailCell.xib in Resources */,
 				B54DE25516339D8C00798A25 /* list_icon.png in Resources */,
 				B54DE25A16339E3600798A25 /* DashboardViewController.xib in Resources */,
+				B54DE2601633C68B00798A25 /* SigninViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +532,7 @@
 				B54DE24A163314A800798A25 /* ExpenseDetailCell.m in Sources */,
 				B54DE253163348E400798A25 /* SVPullToRefresh.m in Sources */,
 				B54DE25916339E3600798A25 /* DashboardViewController.m in Sources */,
+				B54DE25F1633C68B00798A25 /* SigninViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
