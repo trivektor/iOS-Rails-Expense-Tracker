@@ -123,6 +123,9 @@
                 e.expenseId = [[expense valueForKey:@"id"] intValue];
                 e.name = [expense valueForKey:@"name"];
                 e.amount = [[expense valueForKey:@"amount"] doubleValue];
+                e.tax = [[expense valueForKey:@"tax"] doubleValue];
+                e.tip = [[expense valueForKey:@"tip"] doubleValue];
+                e.category = [expense valueForKey:@"category"];
                 e.description = [expense valueForKey:@"description"];
                 e.createdAt = [expense valueForKey:@"created_at"];
                 [self.expenses addObject:e];
