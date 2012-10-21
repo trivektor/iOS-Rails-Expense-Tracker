@@ -91,9 +91,7 @@
 
 - (void)fetchExpensesFromServer
 {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
-    
-    NSString *authToken = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+    NSString *authToken = [self getAuthenticationToken];
     
     NSURL *expensesIndexURL = [NSURL URLWithString:[AppConfig getConfigValue:@"ExpensesIndexPath"]];
     
@@ -189,6 +187,56 @@
     
     [self.navigationItem setBackBarButtonItem:backButton];
     [self.navigationController pushViewController:expenseDetailsController animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Expense *deletedExpense = [self.expenses objectAtIndex:indexPath.row];
+        
+        NSString *authToken = [self getAuthenticationToken];
+        
+        NSURL *expensesIndexURL = [NSURL URLWithString:[AppConfig getConfigValue:@"ExpensesIndexPath"]];
+        
+        NSString *deletedExpensePath = [expensesIndexURL.absoluteString stringByAppendingString:[NSString stringWithFormat:@"/%i", deletedExpense.expenseId]];
+        
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:expensesIndexURL];
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       authToken, @"token",
+                                       nil];
+        
+        NSMutableURLRequest *deleteRequest = [httpClient requestWithMethod:@"DELETE" path:deletedExpensePath parameters:params];
+        
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:deleteRequest];
+        
+        [operation setCompletionBlockWithSuccess:
+         ^(AFHTTPRequestOperation *operation, id responseObject){
+             [self.expenses removeObjectAtIndex:indexPath.row];
+             [expensesTable reloadData];
+             [self.spinnerView removeFromSuperview];
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             [self.spinnerView removeFromSuperview];
+         }
+         ];
+        
+        self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
+        [operation start];
+    }
+}
+
+- (NSString *)getAuthenticationToken
+{
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
+    
+    return [keychain objectForKey:(__bridge id)kSecAttrAccount];
 }
 
 @end

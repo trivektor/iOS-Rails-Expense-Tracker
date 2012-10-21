@@ -20,5 +20,6 @@
 - (void)setupPullToRefresh;
 - (void)showNewExpenseForm;
 - (void)fetchExpensesFromServer;
+- (NSString *)getAuthenticationToken;
 
 @end
