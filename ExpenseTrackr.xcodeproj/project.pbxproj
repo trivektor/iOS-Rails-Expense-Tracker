@@ -632,7 +632,7 @@
 				B502DA8316291E9B00DD98DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B502DA8416291E9B00DD98DB /* Build configuration list for PBXNativeTarget "ExpenseTrackr" */ = {
 			isa = XCConfigurationList;
@@ -641,7 +641,7 @@
 				B502DA8616291E9B00DD98DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

@@ -9,6 +9,7 @@
 #import "SigninViewController.h"
 #import "AppConfig.h"
 #import "SpinnerView.h"
+#import "ExpensesViewController.h"
 
 @interface SigninViewController ()
 
@@ -44,23 +45,38 @@
 - (void)performHouseKeepingTasks
 {
     [self.navigationItem setTitle:@"Sign In"];
+    
+    [webView setDelegate:self];
 }
 
 - (void)loadSigninPage
 {
     NSString *urlAddress = [AppConfig getConfigValue:@"LoginPath"];
-    urlAddress = @"http://192.168.0.11:3000/users/sign_in";
     
     NSURL *url = [NSURL URLWithString:urlAddress];
     
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
     [webView loadRequest:requestObj];
-    //self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    //[self.spinnerView removeFromSuperview];
+    [self.spinnerView removeFromSuperview];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSString *requestURL = request.URL.absoluteString;
+    NSRange pathRange = [requestURL rangeOfString:@"dashboard"];
+
+    if (pathRange.length > 0)
+    {
+        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+        [self.navigationController pushViewController:expensesController animated:YES];
+        return TRUE;
+    }
+    return TRUE;
 }
 
 @end
