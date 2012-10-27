@@ -141,7 +141,7 @@
 {
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
     
-    NSString *authToken = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+    NSString *authToken = [keychain objectForKey:(__bridge id)kSecValueData];
 
     NSURL *createExpenseURL = [NSURL URLWithString:[AppConfig getConfigValue:@"CreateExpensePath"]];
     

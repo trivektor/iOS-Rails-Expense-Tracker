@@ -14,8 +14,10 @@
 }
 
 @property (nonatomic, retain) UIView *spinnerView;
+@property (nonatomic, retain) NSString *cookieDomain;
 
 - (void)performHouseKeepingTasks;
 - (void)loadSigninPage;
+- (NSString *)getTokenFromCookie;
 
 @end

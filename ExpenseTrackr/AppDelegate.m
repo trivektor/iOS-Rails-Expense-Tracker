@@ -181,8 +181,7 @@
 {
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
     
-    NSString *authToken = [keychain objectForKey:(__bridge id)kSecAttrAccount];
-    
+    NSString *authToken = [keychain objectForKey:(__bridge id)kSecValueData];    
     UINavigationController *navController;
     
 //    if (authToken) {
@@ -192,9 +191,17 @@
 //        LoginViewController *loginController = [[LoginViewController alloc] init];
 //        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
 //    }
-    SigninViewController *signinController = [[SigninViewController alloc] init];
-    navController = [[UINavigationController alloc] initWithRootViewController:signinController];
     
+    NSLog(@"%@", authToken);
+    
+    if (authToken != nil && authToken != @"") {
+        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+        navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
+    } else {
+        SigninViewController *signinController = [[SigninViewController alloc] init];
+        navController = [[UINavigationController alloc] initWithRootViewController:signinController];
+    }
+        
     [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];
     [self.window setRootViewController:navController];
 }

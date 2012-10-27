@@ -10,6 +10,7 @@
 #import "AppConfig.h"
 #import "SpinnerView.h"
 #import "ExpensesViewController.h"
+#import "KeychainItemWrapper.h"
 
 @interface SigninViewController ()
 
@@ -17,7 +18,7 @@
 
 @implementation SigninViewController
 
-@synthesize spinnerView;
+@synthesize spinnerView, cookieDomain;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,29 +55,68 @@
     NSString *urlAddress = [AppConfig getConfigValue:@"LoginPath"];
     
     NSURL *url = [NSURL URLWithString:urlAddress];
+    NSLog(@"%@", url.host);
+    [self setCookieDomain:[url host]];
     
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
     [webView loadRequest:requestObj];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webViewDidFinishLoad:(UIWebView *)_webView
 {
     [self.spinnerView removeFromSuperview];
+//    NSString *currentWebViewURL = webView.request.URL.absoluteString;
+//    NSRange dashboardPathRange = [currentWebViewURL rangeOfString:@"dashboard"];
+//    
+//    if (dashboardPathRange.length > 0)
+//    {
+//        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+//        [self.navigationController pushViewController:expensesController animated:YES];
+//    }
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *requestURL = request.URL.absoluteString;
-    NSRange pathRange = [requestURL rangeOfString:@"dashboard"];
+    NSRange dashboardPathRange = [requestURL rangeOfString:@"dashboard"];
+    NSRange signInPathRange = [requestURL rangeOfString:@"/users/sign_in"];
 
-    if (pathRange.length > 0)
+    if (dashboardPathRange.length > 0)
     {
+        NSString *token = [self getTokenFromCookie];
+        
+        NSLog(@"%@", token);
+        
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
+        
+        [keychain setObject:token forKey:(__bridge id)(kSecValueData)];
+        
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
         [self.navigationController pushViewController:expensesController animated:YES];
         return TRUE;
     }
+    else if (signInPathRange.length > 0)
+    {
+        
+    }
     return TRUE;
+}
+
+- (NSString *)getTokenFromCookie
+{
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    
+    for (cookie in [cookieJar cookies]) {
+        if ([[cookie domain] isEqualToString:self.cookieDomain]) {
+            if ([[cookie name] isEqualToString:@"auth_token"]) {
+                return [cookie value];
+            }
+        }
+    }
+    
+    return nil;
 }
 
 @end

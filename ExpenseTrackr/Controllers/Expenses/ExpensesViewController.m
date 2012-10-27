@@ -256,7 +256,7 @@
 {
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
     
-    return [keychain objectForKey:(__bridge id)kSecAttrAccount];
+    return [keychain objectForKey:(__bridge id)kSecValueData];
 }
 
 @end
