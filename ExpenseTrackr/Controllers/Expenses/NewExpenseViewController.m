@@ -13,6 +13,7 @@
 #import "AppConfig.h"
 #import "SpinnerView.h"
 #import "KeychainItemWrapper.h"
+#import "KeychainHelper.h"
 
 @interface NewExpenseViewController ()
 
@@ -139,9 +140,7 @@
 
 - (IBAction)saveExpense:(id)sender
 {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
-    
-    NSString *authToken = [keychain objectForKey:(__bridge id)kSecValueData];
+    NSString *authToken = [KeychainHelper getAuthenticationToken];
 
     NSURL *createExpenseURL = [NSURL URLWithString:[AppConfig getConfigValue:@"CreateExpensePath"]];
     

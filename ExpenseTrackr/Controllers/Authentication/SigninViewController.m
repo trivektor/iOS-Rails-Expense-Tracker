@@ -11,6 +11,7 @@
 #import "SpinnerView.h"
 #import "ExpensesViewController.h"
 #import "KeychainItemWrapper.h"
+#import "KeychainHelper.h"
 
 @interface SigninViewController ()
 
@@ -55,7 +56,6 @@
     NSString *urlAddress = [AppConfig getConfigValue:@"LoginPath"];
     
     NSURL *url = [NSURL URLWithString:urlAddress];
-    NSLog(@"%@", url.host);
     [self setCookieDomain:[url host]];
     
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -66,14 +66,6 @@
 - (void)webViewDidFinishLoad:(UIWebView *)_webView
 {
     [self.spinnerView removeFromSuperview];
-//    NSString *currentWebViewURL = webView.request.URL.absoluteString;
-//    NSRange dashboardPathRange = [currentWebViewURL rangeOfString:@"dashboard"];
-//    
-//    if (dashboardPathRange.length > 0)
-//    {
-//        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
-//        [self.navigationController pushViewController:expensesController animated:YES];
-//    }
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -86,11 +78,7 @@
     {
         NSString *token = [self getTokenFromCookie];
         
-        NSLog(@"%@", token);
-        
-        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
-        
-        [keychain setObject:token forKey:(__bridge id)(kSecValueData)];
+        [KeychainHelper setAuthenticationToken:token];
         
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
         [self.navigationController pushViewController:expensesController animated:YES];

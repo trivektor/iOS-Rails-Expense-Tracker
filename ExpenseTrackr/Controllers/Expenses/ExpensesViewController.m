@@ -11,6 +11,7 @@
 #import "ExpenseDetailsViewController.h"
 #import "DashboardViewController.h"
 #import "KeychainItemWrapper.h"
+#import "KeychainHelper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "AppConfig.h"
@@ -108,7 +109,7 @@
 
 - (void)fetchExpensesFromServer
 {
-    NSString *authToken = [self getAuthenticationToken];
+    NSString *authToken = [KeychainHelper getAuthenticationToken];
     
     NSURL *expensesIndexURL = [NSURL URLWithString:[AppConfig getConfigValue:@"ExpensesIndexPath"]];
     
@@ -220,7 +221,7 @@
         
         Expense *deletedExpense = [self.expenses objectAtIndex:indexPath.row];
         
-        NSString *authToken = [self getAuthenticationToken];
+        NSString *authToken = [KeychainHelper getAuthenticationToken];
         
         NSURL *expensesIndexURL = [NSURL URLWithString:[AppConfig getConfigValue:@"ExpensesIndexPath"]];
         
@@ -250,13 +251,6 @@
         self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
         [operation start];
     }
-}
-
-- (NSString *)getAuthenticationToken
-{
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
-    
-    return [keychain objectForKey:(__bridge id)kSecValueData];
 }
 
 @end

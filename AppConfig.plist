@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>KeychainName</key>
+	<string>ExpenseTrackingKeychain</string>
 	<key>CreateExpensePath</key>
 	<string>http://thawing-oasis-5679.herokuapp.com/api/expenses</string>
 	<key>TokenValidationPath</key>

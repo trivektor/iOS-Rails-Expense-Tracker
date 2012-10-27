@@ -21,6 +21,5 @@
 - (void)showNewExpenseForm;
 - (void)showDashboard;
 - (void)fetchExpensesFromServer;
-- (NSString *)getAuthenticationToken;
 
 @end

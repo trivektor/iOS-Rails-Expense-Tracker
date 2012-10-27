@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AppConfig.h"
 #import "KeychainItemWrapper.h"
+#import "KeychainHelper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "CustomTableCellViewController.h"
@@ -179,9 +180,6 @@
 
 - (void)validateAuthenticationToken
 {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
-    
-    NSString *authToken = [keychain objectForKey:(__bridge id)kSecValueData];    
     UINavigationController *navController;
     
 //    if (authToken) {
@@ -192,7 +190,7 @@
 //        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
 //    }
     
-    NSLog(@"%@", authToken);
+    NSString *authToken = [KeychainHelper getAuthenticationToken];
     
     if (authToken != nil && authToken != @"") {
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
