@@ -67,9 +67,9 @@
     [signupTableForm setScrollEnabled:NO];
     
     // Add 'Cancel' button to the left of the navigation bar
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(cancelSignup)];
-    [cancelButton setTintColor:[UIColor blackColor]];
-    [self.navigationItem setLeftBarButtonItem:cancelButton];
+    // UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(cancelSignup)];
+    // [cancelButton setTintColor:[UIColor blackColor]];
+    // [self.navigationItem setLeftBarButtonItem:cancelButton];
     
     // Add 'Submit' button to the right of the navigation bar
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"Submit" style:UIBarButtonItemStyleDone target:self action:@selector(signup)];

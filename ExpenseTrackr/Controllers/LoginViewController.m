@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SignupViewController.h"
 #import "SpinnerView.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
@@ -66,14 +67,19 @@
     [loginTableForm setScrollEnabled:NO];
     
     // Add 'Cancel' button
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(cancelLogin)];
-    [cancelButton setTintColor:[UIColor blackColor]];
-    [self.navigationItem setLeftBarButtonItem:cancelButton];
+    // UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(cancelLogin)];
+    // [cancelButton setTintColor:[UIColor blackColor]];
+    // [self.navigationItem setLeftBarButtonItem:cancelButton];
     
     // Add 'Submit' button
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"Submit" style:UIBarButtonItemStylePlain target:self action:@selector(login)];
     [submitButton setTintColor:[UIColor blackColor]];
     [self.navigationItem setRightBarButtonItem:submitButton];
+    
+    // Show signup form when the signup label is tapped
+    [signupLabel setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *signupLabelTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSignupLabelWithGesture:)];
+    [signupLabel addGestureRecognizer:signupLabelTap];
     
     // Set title of navigation bar
     [self.navigationItem setTitle:@"Login"];
@@ -174,6 +180,17 @@
         [operation start];
         
     }
+}
+
+- (void)didTapSignupLabelWithGesture:(UITapGestureRecognizer *)tapGesture
+{
+    SignupViewController *signupController = [[SignupViewController alloc] init];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:nil];
+    [backButton setTintColor:[UIColor blackColor]];
+    [self.navigationItem setBackBarButtonItem:backButton];
+    [self.navigationController pushViewController:signupController animated:YES];
+
 }
 
 @end

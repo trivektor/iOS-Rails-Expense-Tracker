@@ -17,6 +17,7 @@
     __weak IBOutlet UITableView *loginTableForm;
     __weak IBOutlet UITextField *emailTextField;
     __weak IBOutlet UITextField *passwordTextField;
+    __weak IBOutlet UILabel *signupLabel;
 }
 
 @property (nonatomic, weak) id <LoginViewControllerCancelDelegate> delegate;
@@ -28,5 +29,6 @@
 - (void)performHouseKeepingTasks;
 - (void)cancelLogin;
 - (void)login;
+- (void)didTapSignupLabelWithGesture:(UITapGestureRecognizer *)tapGesture;
 
 @end
