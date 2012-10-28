@@ -78,6 +78,8 @@
     {
         NSString *token = [self getTokenFromCookie];
         
+        NSLog(@"token from cookie is %@", token);
+        
         [KeychainHelper setAuthenticationToken:token];
         
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];

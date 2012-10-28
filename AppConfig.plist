@@ -13,6 +13,8 @@
 	<key>ExpensesIndexPath</key>
 	<string>http://thawing-oasis-5679.herokuapp.com/api/expenses</string>
 	<key>LoginPath</key>
-	<string>http://thawing-oasis-5679.herokuapp.com/users/sign_in</string>
+	<string>http://thawing-oasis-5679.herokuapp.com/api/sessions</string>
+	<key>LogoutPath</key>
+	<string>http://thawing-oasis-5679.herokuapp.com/api/sessions/</string>
 </dict>
 </plist>

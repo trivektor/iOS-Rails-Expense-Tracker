@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DashboardViewController : UIViewController
+@interface DashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    __weak IBOutlet UITableView *optionsTable;
+}
+
+@property (nonatomic, retain) NSMutableArray *options;
 
 - (void)performHouseKeepingTasks;
 

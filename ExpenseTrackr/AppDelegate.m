@@ -192,12 +192,16 @@
     
     NSString *authToken = [KeychainHelper getAuthenticationToken];
     
+    NSLog(@"authToken when app starts is %@", authToken);
+    
     if (authToken != nil && authToken != @"") {
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
         navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
     } else {
-        SigninViewController *signinController = [[SigninViewController alloc] init];
-        navController = [[UINavigationController alloc] initWithRootViewController:signinController];
+//        SigninViewController *signinController = [[SigninViewController alloc] init];
+//        navController = [[UINavigationController alloc] initWithRootViewController:signinController];
+        LoginViewController *loginController = [[LoginViewController alloc] init];
+        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
     }
         
     [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];

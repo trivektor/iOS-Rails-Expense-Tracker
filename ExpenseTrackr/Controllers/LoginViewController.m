@@ -12,6 +12,8 @@
 #import "AFHTTPRequestOperation.h"
 #import "AppConfig.h"
 #import "KeychainItemWrapper.h"
+#import "KeychainHelper.h"
+#import "ExpensesViewController.h"
 
 @interface LoginViewController ()
 
@@ -145,15 +147,16 @@
              if ([[json valueForKey:@"success"] intValue] == 1) {
                  [alert setMessage:[json valueForKey:@"message"]];
                  
-                 NSString *token = [json valueForKey:@"token"];
+                 NSString *token = [json valueForKey:@"auth_token"];
                  NSLog(@"%@", token);
                  
-                 KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"ExpenseTrackingKeychain" accessGroup:nil];
-                 
-                 [keychain setObject:token forKey:(__bridge id)kSecAttrAccount];
+                 [KeychainHelper setAuthenticationToken:token];
                  
                  [alert setTitle:@"Alert"];
                  [alert setMessage:@"You've logged in successfully"];
+                 
+                 ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+                 [self.navigationController pushViewController:expensesController animated:YES];
              } else {
                  [alert setTitle:@"Error"];
                  [alert setMessage:[json valueForKey:@"errors"]];

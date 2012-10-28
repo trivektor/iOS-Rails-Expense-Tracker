@@ -30,4 +30,13 @@
     [keychain setObject:authToken forKey:(__bridge id)(kSecValueData)];
 }
 
++ (void)reset
+{
+    NSString *keychainName = [AppConfig getConfigValue:@"KeychainName"];
+    
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainName accessGroup:nil];
+    
+    [keychain resetKeychainItem];
+}
+
 @end

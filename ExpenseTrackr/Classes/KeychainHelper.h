@@ -12,5 +12,6 @@
 
 + (NSString *)getAuthenticationToken;
 + (void)setAuthenticationToken:(NSString *)authToken;
++ (void)reset;
 
 @end

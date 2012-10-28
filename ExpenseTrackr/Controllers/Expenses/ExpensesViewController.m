@@ -42,8 +42,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [expensesTable setDelegate:self];
-    [expensesTable setDataSource:self];
     [self performHouseKeepingTasks];
     [self setupPullToRefresh];
     [self fetchExpensesFromServer];
@@ -68,6 +66,7 @@
     [newExpenseButton setTintColor:[UIColor blackColor]];
     [self.navigationItem setRightBarButtonItem:newExpenseButton];
     
+    // Add 'Dashboard' button
     UIBarButtonItem *dashboardButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(showDashboard)];
     [dashboardButton setImage:[UIImage imageNamed:@"list_icon.png"]];
     [dashboardButton setTintColor:[UIColor blackColor]];
