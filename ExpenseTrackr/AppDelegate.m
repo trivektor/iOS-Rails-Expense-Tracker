@@ -192,7 +192,7 @@
     
     NSString *authToken = [KeychainHelper getAuthenticationToken];
     
-    NSLog(@"authToken when app starts is %@", authToken);
+    //NSLog(@"authToken when app starts is %@", authToken);
     
     if (authToken != nil && authToken != @"") {
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];

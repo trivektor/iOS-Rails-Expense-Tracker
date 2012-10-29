@@ -140,13 +140,13 @@
         
         NSMutableURLRequest *postRequest = [httpClient requestWithMethod:@"POST" path:signinURL.absoluteString parameters:params];
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:postRequest];
         
         [operation setCompletionBlockWithSuccess:
          ^(AFHTTPRequestOperation *operation, id responseObject) {
              NSString *response = [operation responseString];
-             
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
              
              NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
              
@@ -174,6 +174,11 @@
         failure:
          ^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"error: %@", [operation error]);
+             [self.spinnerView removeFromSuperview];
+             
+             [alert setTitle:@"Error"];
+             [alert setMessage:@"An error occured on our side. Please try again later"];
+             [alert show];
          }];
         
         self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
