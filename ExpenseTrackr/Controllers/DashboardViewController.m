@@ -77,16 +77,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
+        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Sign out" otherButtonTitles:nil];
+        actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+        [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
         NSURL *logoutURL = [NSURL URLWithString:[AppConfig getConfigValue:@"LogoutPath"]];
-        
+
         AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:logoutURL];
-        
+
         NSString *authToken = [KeychainHelper getAuthenticationToken];
-        
+
         NSMutableURLRequest *getRequest = [httpClient requestWithMethod:@"DELETE" path:[logoutURL.absoluteString stringByAppendingString:authToken] parameters:nil];
-        
+
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:getRequest];
-        
+
         [operation setCompletionBlockWithSuccess:
          ^(AFHTTPRequestOperation *operation, id responseObject){
 

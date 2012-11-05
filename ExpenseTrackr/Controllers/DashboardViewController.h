@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface DashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 {
     __weak IBOutlet UITableView *optionsTable;
 }
