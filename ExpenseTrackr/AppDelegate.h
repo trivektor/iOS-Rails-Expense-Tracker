@@ -16,6 +16,10 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (strong, nonatomic) UIViewController *centerController;
+@property (strong, nonatomic) UIViewController *leftController;
+@property (strong, nonatomic) UIViewController *rightController;
+
 - (void)saveContext;
 - (void)validateAuthenticationToken;
 - (NSURL *)applicationDocumentsDirectory;

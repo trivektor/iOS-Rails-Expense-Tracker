@@ -16,6 +16,8 @@
 #import "HomeViewController.h"
 #import "ExpensesViewController.h"
 #import "SigninViewController.h"
+#import "DashboardViewController.h"
+#import "IIViewDeckController.h"
 
 @interface UINavigationController (autorotate)
 
@@ -39,6 +41,8 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+@synthesize centerController, leftController, rightController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -180,32 +184,26 @@
 
 - (void)validateAuthenticationToken
 {
-    UINavigationController *navController;
-    
-//    if (authToken) {
-//        ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
-//        navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
-//    } else {
-//        LoginViewController *loginController = [[LoginViewController alloc] init];
-//        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
-//    }
-    
     NSString *authToken = [KeychainHelper getAuthenticationToken];
     
     //NSLog(@"authToken when app starts is %@", authToken);
     
     if (authToken != nil && authToken != @"") {
         ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
-        navController = [[UINavigationController alloc] initWithRootViewController:expensesController];
-    } else {
-//        SigninViewController *signinController = [[SigninViewController alloc] init];
-//        navController = [[UINavigationController alloc] initWithRootViewController:signinController];
-        LoginViewController *loginController = [[LoginViewController alloc] init];
-        navController = [[UINavigationController alloc] initWithRootViewController:loginController];
-    }
         
-    [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.window setRootViewController:navController];
+        self.centerController = [[UINavigationController alloc] initWithRootViewController:expensesController];
+        self.leftController = [[DashboardViewController alloc] init];
+        
+        IIViewDeckController *navController = [[IIViewDeckController alloc] initWithCenterViewController:self.centerController leftViewController:self.leftController rightViewController:nil];
+        
+        navController.leftLedge = 100;
+        [self.window setRootViewController:navController];
+    } else {
+        LoginViewController *loginController = [[LoginViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginController];
+        [self.window setRootViewController:navController];
+    }
+
 }
 
 @end

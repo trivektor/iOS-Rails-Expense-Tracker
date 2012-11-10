@@ -67,10 +67,10 @@
     [self.navigationItem setRightBarButtonItem:newExpenseButton];
     
     // Add 'Dashboard' button
-    UIBarButtonItem *dashboardButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(showDashboard)];
-    [dashboardButton setImage:[UIImage imageNamed:@"list_icon.png"]];
-    [dashboardButton setTintColor:[UIColor blackColor]];
-    [self.navigationItem setLeftBarButtonItem:dashboardButton];
+    // UIBarButtonItem *dashboardButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(showDashboard)];
+    // [dashboardButton setImage:[UIImage imageNamed:@"list_icon.png"]];
+    // [dashboardButton setTintColor:[UIColor blackColor]];
+    // [self.navigationItem setLeftBarButtonItem:dashboardButton];
     
     UINib *nib = [UINib nibWithNibName:@"ExpenseCell" bundle:nil];
     

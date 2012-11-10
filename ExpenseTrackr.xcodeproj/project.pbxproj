@@ -62,6 +62,8 @@
 		B502DAFD162BD54900DD98DB /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFC162BD54900DD98DB /* Expense.m */; };
 		B502DB00162BD5D500DD98DB /* ExpenseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */; };
 		B50E49EB163C41CE009A86BB /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B50E49EA163C41CE009A86BB /* KeychainHelper.m */; };
+		B5236E8C164E28F9002F2486 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5236E8B164E28F9002F2486 /* IIViewDeckController.m */; };
+		B5236E90164E2AE3002F2486 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5236E8F164E2AE3002F2486 /* WrapController.m */; };
 		B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE23D16328A3E00798A25 /* ExpenseCell.m */; };
 		B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE23F16328A4D00798A25 /* ExpenseCell.xib */; };
 		B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE242163311C900798A25 /* ExpenseDetailsViewController.m */; };
@@ -161,6 +163,10 @@
 		B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCategory.m; sourceTree = "<group>"; };
 		B50E49E9163C41CE009A86BB /* KeychainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainHelper.h; sourceTree = "<group>"; };
 		B50E49EA163C41CE009A86BB /* KeychainHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainHelper.m; sourceTree = "<group>"; };
+		B5236E8A164E28F9002F2486 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		B5236E8B164E28F9002F2486 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		B5236E8E164E2AE3002F2486 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapController.h; sourceTree = "<group>"; };
+		B5236E8F164E2AE3002F2486 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapController.m; sourceTree = "<group>"; };
 		B54DE23C16328A3E00798A25 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
 		B54DE23D16328A3E00798A25 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
 		B54DE23F16328A4D00798A25 /* ExpenseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
@@ -288,6 +294,10 @@
 				B54DE25616339E3600798A25 /* DashboardViewController.h */,
 				B54DE25716339E3600798A25 /* DashboardViewController.m */,
 				B54DE25816339E3600798A25 /* DashboardViewController.xib */,
+				B5236E8A164E28F9002F2486 /* IIViewDeckController.h */,
+				B5236E8B164E28F9002F2486 /* IIViewDeckController.m */,
+				B5236E8E164E2AE3002F2486 /* WrapController.h */,
+				B5236E8F164E2AE3002F2486 /* WrapController.m */,
 			);
 			name = Controllers;
 			path = ExpenseTrackr/Controllers;
@@ -539,6 +549,8 @@
 				B54DE25916339E3600798A25 /* DashboardViewController.m in Sources */,
 				B54DE25F1633C68B00798A25 /* SigninViewController.m in Sources */,
 				B50E49EB163C41CE009A86BB /* KeychainHelper.m in Sources */,
+				B5236E8C164E28F9002F2486 /* IIViewDeckController.m in Sources */,
+				B5236E90164E2AE3002F2486 /* WrapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

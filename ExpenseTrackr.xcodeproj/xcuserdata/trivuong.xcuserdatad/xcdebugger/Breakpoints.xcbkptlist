@@ -73,24 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ExpenseTrackr/AppDelegate.m"
-         timestampString = "373067201.727144"
+         timestampString = "374224199.358722"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "195"
-         endingLineNumber = "195"
-         landmarkName = "-validateAuthenticationToken"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ExpenseTrackr/AppDelegate.m"
-         timestampString = "373070010.224496"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "196"
-         endingLineNumber = "196"
+         startingLineNumber = "191"
+         endingLineNumber = "191"
          landmarkName = "-validateAuthenticationToken"
          landmarkType = "5">
       </FileBreakpoint>
