@@ -7,11 +7,11 @@
 //
 
 #import "DashboardViewController.h"
+#import "LoginViewController.h"
 #import "KeychainHelper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "AppConfig.h"
-#import "LoginViewController.h"
 
 @interface DashboardViewController ()
 
@@ -27,6 +27,7 @@
     if (self) {
         // Custom initialization
         self.options = [[NSMutableArray alloc] initWithCapacity:0];
+        [self.options addObject:@"View Receipts"];
         [self.options addObject:@"Sign out"];
     }
     return self;
@@ -77,6 +78,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
+
+    } else if (indexPath.row == 1) {
         
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Sign out" otherButtonTitles:nil];
         actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
@@ -101,7 +104,9 @@
          ^(AFHTTPRequestOperation *operation, id responseObject){
 
              [KeychainHelper reset];
-             [[UIApplication sharedApplication] resignFirstResponder];
+             LoginViewController *loginController = [[LoginViewController alloc] init];
+             UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginController];
+             [self.view.window setRootViewController:navController];
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              //NSString *response = [operation responseString];

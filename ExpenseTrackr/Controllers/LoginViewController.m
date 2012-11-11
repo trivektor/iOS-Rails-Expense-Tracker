@@ -8,13 +8,15 @@
 
 #import "LoginViewController.h"
 #import "SignupViewController.h"
+#import "DashboardViewController.h"
+#import "ExpensesViewController.h"
+#import "IIViewDeckController.h"
 #import "SpinnerView.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "AppConfig.h"
 #import "KeychainItemWrapper.h"
 #import "KeychainHelper.h"
-#import "ExpensesViewController.h"
 
 @interface LoginViewController ()
 
@@ -160,9 +162,14 @@
                  
                  [alert setTitle:@"Alert"];
                  [alert setMessage:@"You've logged in successfully"];
-                 
+
                  ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
-                 [self.navigationController pushViewController:expensesController animated:YES];
+                 DashboardViewController *dashboardController = [[DashboardViewController alloc] init];
+
+                 UINavigationController *centerController = [[UINavigationController alloc] initWithRootViewController:expensesController];
+
+                 IIViewDeckController *navController = [[IIViewDeckController alloc] initWithCenterViewController:centerController leftViewController:dashboardController];
+                 [self.view.window setRootViewController:navController];
              } else {
                  [alert setTitle:@"Error"];
                  [alert setMessage:[json valueForKey:@"errors"]];
