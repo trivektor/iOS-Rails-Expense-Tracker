@@ -8,6 +8,9 @@
 
 #import "DashboardViewController.h"
 #import "LoginViewController.h"
+#import "IIViewDeckController.h"
+#import "ExpensesViewController.h"
+#import "ReceiptsViewController.h"
 #import "KeychainHelper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
@@ -27,7 +30,8 @@
     if (self) {
         // Custom initialization
         self.options = [[NSMutableArray alloc] initWithCapacity:0];
-        [self.options addObject:@"View Receipts"];
+        [self.options addObject:@"Expenses"];
+        [self.options addObject:@"Receipts"];
         [self.options addObject:@"Sign out"];
     }
     return self;
@@ -77,13 +81,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-
-    } else if (indexPath.row == 1) {
-        
+    if (indexPath.row == self.options.count - 1) {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Sign out" otherButtonTitles:nil];
         actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
         [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+        return;
+    } else {
+        UINavigationController *newController;
+        
+        if (indexPath.row == 0) {
+            ExpensesViewController *expensesController = [[ExpensesViewController alloc] init];
+            newController = [[UINavigationController alloc] initWithRootViewController:expensesController];
+        } else if (indexPath.row == 1) {
+            ReceiptsViewController *receiptsController = [[ReceiptsViewController alloc] init];
+            newController = [[UINavigationController alloc] initWithRootViewController:receiptsController];
+        }
+        
+        [newController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];
+        
+        [self.viewDeckController closeLeftViewAnimated:YES completion:^(IIViewDeckController *controller) {
+            controller.centerController = newController;
+        }];
     }
 }
 

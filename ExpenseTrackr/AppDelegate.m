@@ -196,7 +196,7 @@
         
         IIViewDeckController *navController = [[IIViewDeckController alloc] initWithCenterViewController:self.centerController leftViewController:self.leftController rightViewController:nil];
         
-        navController.leftLedge = 100;
+        navController.leftLedge = 60;
         [self.window setRootViewController:navController];
     } else {
         LoginViewController *loginController = [[LoginViewController alloc] init];
