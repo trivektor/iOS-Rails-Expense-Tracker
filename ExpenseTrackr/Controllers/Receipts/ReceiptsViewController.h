@@ -14,13 +14,16 @@
     __weak IBOutlet UITableView *receiptsTable;
 }
 
-@property (nonatomic, strong) UIView *spinnerView;
+@property (nonatomic, retain) UIView *spinnerView;
+@property (nonatomic, retain) NSMutableArray *receipts;
 
 - (void)performHouseKeepingTasks;
 - (void)setDelegates;
+- (void)fetchReceiptsFromServer;
 - (void)showNewReceiptForm;
 + (UIImage *)imageWithImage:(UIImage *)sourceImage scaledToSize:(CGSize)newSize;
 + (UIImage *)imageWithImage:(UIImage *)sourceImage scaledToSizeWithSameAspectRatio:(CGSize)targetSize;
 - (void)postReceiptImage:(UIImage *)image;
+- (void)setupPullToRefresh;
 
 @end

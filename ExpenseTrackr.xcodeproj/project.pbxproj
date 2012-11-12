@@ -67,6 +67,7 @@
 		B5236E96164E37BB002F2486 /* ReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5236E94164E37BB002F2486 /* ReceiptsViewController.m */; };
 		B5236E97164E37BB002F2486 /* ReceiptsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5236E95164E37BB002F2486 /* ReceiptsViewController.xib */; };
 		B5236EA8164F96EE002F2486 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5236EA7164F96EE002F2486 /* camera_icon.png */; };
+		B5236EAC1650BA48002F2486 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = B5236EAB1650BA48002F2486 /* Receipt.m */; };
 		B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE23D16328A3E00798A25 /* ExpenseCell.m */; };
 		B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE23F16328A4D00798A25 /* ExpenseCell.xib */; };
 		B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE242163311C900798A25 /* ExpenseDetailsViewController.m */; };
@@ -174,6 +175,8 @@
 		B5236E94164E37BB002F2486 /* ReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptsViewController.m; sourceTree = "<group>"; };
 		B5236E95164E37BB002F2486 /* ReceiptsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptsViewController.xib; sourceTree = "<group>"; };
 		B5236EA7164F96EE002F2486 /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_icon.png; path = ../../../../Desktop/iphone_dev/camera_icon.png; sourceTree = "<group>"; };
+		B5236EAA1650BA48002F2486 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		B5236EAB1650BA48002F2486 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 		B54DE23C16328A3E00798A25 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
 		B54DE23D16328A3E00798A25 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
 		B54DE23F16328A4D00798A25 /* ExpenseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 				B502DAFC162BD54900DD98DB /* Expense.m */,
 				B502DAFE162BD5D500DD98DB /* ExpenseCategory.h */,
 				B502DAFF162BD5D500DD98DB /* ExpenseCategory.m */,
+				B5236EAA1650BA48002F2486 /* Receipt.h */,
+				B5236EAB1650BA48002F2486 /* Receipt.m */,
 			);
 			name = Models;
 			path = ExpenseTrackr/Models;
@@ -573,6 +578,7 @@
 				B5236E8C164E28F9002F2486 /* IIViewDeckController.m in Sources */,
 				B5236E90164E2AE3002F2486 /* WrapController.m in Sources */,
 				B5236E96164E37BB002F2486 /* ReceiptsViewController.m in Sources */,
+				B5236EAC1650BA48002F2486 /* Receipt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

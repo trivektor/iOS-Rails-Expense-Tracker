@@ -12,7 +12,8 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "SpinnerView.h"
-#include <math.h>
+#import "SVPullToRefresh.h"
+#import "Receipt.h"
 
 @interface ReceiptsViewController ()
 
@@ -20,13 +21,14 @@
 
 @implementation ReceiptsViewController
 
-@synthesize spinnerView;
+@synthesize spinnerView, receipts;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.receipts = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 }
@@ -43,6 +45,8 @@
     [newReceipt setTintColor:[UIColor blackColor]];
     
     [self.navigationItem setRightBarButtonItem:newReceipt];
+    
+    [self fetchReceiptsFromServer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +64,64 @@
 {
     [receiptsTable setDelegate:self];
     [receiptsTable setDataSource:self];
+}
+
+- (void)setupPullToRefresh
+{
+    [receiptsTable addPullToRefreshWithActionHandler:^{
+        [self fetchReceiptsFromServer];
+    }];
+}
+
+- (void)fetchReceiptsFromServer
+{
+    NSString *authToken = [KeychainHelper getAuthenticationToken];
+    
+    NSURL *receiptsIndexURL = [NSURL URLWithString:[AppConfig getConfigValue:@"ReceiptsIndexPath"]];
+    
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:receiptsIndexURL];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   authToken, @"token",
+                                   nil];
+    
+    NSMutableURLRequest *getRequest = [httpClient requestWithMethod:@"GET" path:receiptsIndexURL.absoluteString parameters:params];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:getRequest];
+    
+    [operation setCompletionBlockWithSuccess:
+     ^(AFHTTPRequestOperation *operation, id responseObject){
+         
+         [self.receipts removeAllObjects];
+         
+         NSString *response = [operation responseString];
+         
+         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+         
+         NSArray *receiptsJSON = [json valueForKey:@"receipts"];
+         
+         Receipt *r;
+         
+         for (NSDictionary *receipt in receiptsJSON) {
+             
+             r = [[Receipt alloc] init];
+             r.receiptId = [[receipt valueForKey:@"id"] intValue];
+             r.name = [receipt valueForKey:@"name"];
+             r.description = [receipt valueForKey:@"description"];
+             r.createdAt = [receipt valueForKey:@"created_at"];
+             [self.receipts addObject:r];
+             [receiptsTable reloadData];
+         }
+         
+         [self.spinnerView removeFromSuperview];
+         [receiptsTable.pullToRefreshView stopAnimating];
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         [self.spinnerView removeFromSuperview];
+     }];
+    
+    self.spinnerView = [SpinnerView loadSpinnerIntoView:self.view];
+    [operation start];
 }
 
 - (void)showNewReceiptForm
@@ -283,7 +345,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.receipts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -293,6 +355,11 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    
+    Receipt *r = [self.receipts objectAtIndex:indexPath.row];
+    
+    [cell.textLabel setText:r.name];
+    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
     
     return cell;
 }
