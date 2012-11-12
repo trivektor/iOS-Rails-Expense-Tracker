@@ -4,6 +4,8 @@
 <dict>
 	<key>KeychainName</key>
 	<string>ExpenseTrackingKeychain</string>
+	<key>CreateReceiptPath</key>
+	<string>http://thawing-oasis-5679.herokuapp.com/api/receipts</string>
 	<key>CreateExpensePath</key>
 	<string>http://thawing-oasis-5679.herokuapp.com/api/expenses</string>
 	<key>TokenValidationPath</key>

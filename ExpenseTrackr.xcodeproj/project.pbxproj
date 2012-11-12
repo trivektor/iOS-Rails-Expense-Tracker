@@ -66,6 +66,7 @@
 		B5236E90164E2AE3002F2486 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5236E8F164E2AE3002F2486 /* WrapController.m */; };
 		B5236E96164E37BB002F2486 /* ReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5236E94164E37BB002F2486 /* ReceiptsViewController.m */; };
 		B5236E97164E37BB002F2486 /* ReceiptsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5236E95164E37BB002F2486 /* ReceiptsViewController.xib */; };
+		B5236EA8164F96EE002F2486 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5236EA7164F96EE002F2486 /* camera_icon.png */; };
 		B54DE23E16328A3E00798A25 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE23D16328A3E00798A25 /* ExpenseCell.m */; };
 		B54DE24016328A4D00798A25 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE23F16328A4D00798A25 /* ExpenseCell.xib */; };
 		B54DE244163311C900798A25 /* ExpenseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE242163311C900798A25 /* ExpenseDetailsViewController.m */; };
@@ -172,6 +173,7 @@
 		B5236E93164E37BB002F2486 /* ReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptsViewController.h; sourceTree = "<group>"; };
 		B5236E94164E37BB002F2486 /* ReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptsViewController.m; sourceTree = "<group>"; };
 		B5236E95164E37BB002F2486 /* ReceiptsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptsViewController.xib; sourceTree = "<group>"; };
+		B5236EA7164F96EE002F2486 /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_icon.png; path = ../../../../Desktop/iphone_dev/camera_icon.png; sourceTree = "<group>"; };
 		B54DE23C16328A3E00798A25 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
 		B54DE23D16328A3E00798A25 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
 		B54DE23F16328A4D00798A25 /* ExpenseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B5236EA7164F96EE002F2486 /* camera_icon.png */,
 				B54DE25416339D8C00798A25 /* list_icon.png */,
 				B502DAED162BC5EF00DD98DB /* add_button.png */,
 				B502DAEB162B9BA200DD98DB /* trash_icon.png */,
@@ -524,6 +527,7 @@
 				B54DE25A16339E3600798A25 /* DashboardViewController.xib in Resources */,
 				B54DE2601633C68B00798A25 /* SigninViewController.xib in Resources */,
 				B5236E97164E37BB002F2486 /* ReceiptsViewController.xib in Resources */,
+				B5236EA8164F96EE002F2486 /* camera_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
