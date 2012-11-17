@@ -39,13 +39,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setDelegates];
     [self performHouseKeepingTasks];
-    
-    UIBarButtonItem *newReceipt = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:self action:@selector(showNewReceiptForm)];
-    [newReceipt setImage:[UIImage imageNamed:@"camera_icon.png"]];
-    [newReceipt setTintColor:[UIColor blackColor]];
-    
-    [self.navigationItem setRightBarButtonItem:newReceipt];
-    
+    [self setupPullToRefresh];
     [self fetchReceiptsFromServer];
 }
 
@@ -58,6 +52,12 @@
 - (void)performHouseKeepingTasks
 {
     [self.navigationItem setTitle:@"Receipts"];
+    
+    UIBarButtonItem *newReceipt = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:self action:@selector(showNewReceiptForm)];
+    [newReceipt setImage:[UIImage imageNamed:@"camera_icon.png"]];
+    [newReceipt setTintColor:[UIColor blackColor]];
+    
+    [self.navigationItem setRightBarButtonItem:newReceipt];
 }
 
 - (void)setDelegates
@@ -143,8 +143,8 @@
     @try {
         UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
         //UIImage *scaledImage = [ReceiptsViewController imageWithImage:image scaledToSize:CGSizeMake(320, 480)];
-        UIImage *scaledImage = [ReceiptsViewController imageWithImage:originalImage scaledToSizeWithSameAspectRatio:CGSizeMake(320, 480)];
-        [self postReceiptImage:scaledImage];
+        //UIImage *scaledImage = [ReceiptsViewController imageWithImage:originalImage scaledToSizeWithSameAspectRatio:CGSizeMake(960, 1440)];
+        [self postReceiptImage:originalImage];
     }
     @catch (NSException *exception) {
         NSLog(@"%@", exception.description);
@@ -154,7 +154,7 @@
     }
 }
 
--(void)postReceiptImage:(UIImage *)image
+- (void)postReceiptImage:(UIImage *)image
 {
     NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(image, .1)];
     
@@ -174,7 +174,7 @@
                                    nil];
 
     NSMutableURLRequest *postRequest = [httpClient multipartFormRequestWithMethod:@"POST" path:createReceiptURL.absoluteString parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:imageData name:@"image" fileName:@"receipt.jpg" mimeType:@"image/jpg"];
+        [formData appendPartWithFileData:imageData name:@"receipt[image]" fileName:@"receipt.jpg" mimeType:@"image/jpeg"];
     }];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:postRequest];
@@ -336,8 +336,6 @@
     return newImage;
 }
 
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -362,6 +360,11 @@
     [cell setSelectionStyle:UITableViewCellEditingStyleNone];
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 @end
