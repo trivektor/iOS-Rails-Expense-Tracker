@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceiptsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ReceiptsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     
-    __weak IBOutlet UITableView *receiptsTable;
+    __weak IBOutlet UICollectionView *receiptsCollection;
 }
 
 @property (nonatomic, retain) UIView *spinnerView;

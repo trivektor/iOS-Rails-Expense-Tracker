@@ -81,6 +81,8 @@
 		B54DE25A16339E3600798A25 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25816339E3600798A25 /* DashboardViewController.xib */; };
 		B54DE25F1633C68B00798A25 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DE25D1633C68B00798A25 /* SigninViewController.m */; };
 		B54DE2601633C68B00798A25 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DE25E1633C68B00798A25 /* SigninViewController.xib */; };
+		B568C4051658487E000B3DF4 /* ReceiptImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B568C4041658487E000B3DF4 /* ReceiptImageCell.m */; };
+		B568C4081658489E000B3DF4 /* ReceiptImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B568C4071658489E000B3DF4 /* ReceiptImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +198,9 @@
 		B54DE25C1633C68B00798A25 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
 		B54DE25D1633C68B00798A25 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
 		B54DE25E1633C68B00798A25 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
+		B568C4031658487E000B3DF4 /* ReceiptImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptImageCell.h; sourceTree = "<group>"; };
+		B568C4041658487E000B3DF4 /* ReceiptImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptImageCell.m; sourceTree = "<group>"; };
+		B568C4071658489E000B3DF4 /* ReceiptImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptImageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +431,9 @@
 				B54DE2461633148A00798A25 /* ExpenseDetailCell.xib */,
 				B54DE248163314A800798A25 /* ExpenseDetailCell.h */,
 				B54DE249163314A800798A25 /* ExpenseDetailCell.m */,
+				B568C4031658487E000B3DF4 /* ReceiptImageCell.h */,
+				B568C4041658487E000B3DF4 /* ReceiptImageCell.m */,
+				B568C4071658489E000B3DF4 /* ReceiptImageCell.xib */,
 			);
 			name = Cells;
 			path = ExpenseTrackr/Cells;
@@ -533,6 +541,7 @@
 				B54DE2601633C68B00798A25 /* SigninViewController.xib in Resources */,
 				B5236E97164E37BB002F2486 /* ReceiptsViewController.xib in Resources */,
 				B5236EA8164F96EE002F2486 /* camera_icon.png in Resources */,
+				B568C4081658489E000B3DF4 /* ReceiptImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +588,7 @@
 				B5236E90164E2AE3002F2486 /* WrapController.m in Sources */,
 				B5236E96164E37BB002F2486 /* ReceiptsViewController.m in Sources */,
 				B5236EAC1650BA48002F2486 /* Receipt.m in Sources */,
+				B568C4051658487E000B3DF4 /* ReceiptImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

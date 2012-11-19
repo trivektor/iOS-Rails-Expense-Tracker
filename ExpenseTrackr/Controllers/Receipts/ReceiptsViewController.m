@@ -14,6 +14,7 @@
 #import "SpinnerView.h"
 #import "SVPullToRefresh.h"
 #import "Receipt.h"
+#import "ReceiptImageCell.h"
 
 @interface ReceiptsViewController ()
 
@@ -58,17 +59,20 @@
     [newReceipt setTintColor:[UIColor blackColor]];
     
     [self.navigationItem setRightBarButtonItem:newReceipt];
+
+    [receiptsCollection registerNib:[UINib nibWithNibName:@"ReceiptImageCell" bundle:nil] forCellWithReuseIdentifier:@"ReceiptImageCell"];
+    [receiptsCollection registerClass:[ReceiptImageCell class] forCellWithReuseIdentifier:@"ReceiptImageCell"];
 }
 
 - (void)setDelegates
 {
-    [receiptsTable setDelegate:self];
-    [receiptsTable setDataSource:self];
+    [receiptsCollection setDelegate:self];
+    [receiptsCollection setDataSource:self];
 }
 
 - (void)setupPullToRefresh
 {
-    [receiptsTable addPullToRefreshWithActionHandler:^{
+    [receiptsCollection addPullToRefreshWithActionHandler:^{
         [self fetchReceiptsFromServer];
     }];
 }
@@ -109,12 +113,13 @@
              r.name = [receipt valueForKey:@"name"];
              r.description = [receipt valueForKey:@"description"];
              r.createdAt = [receipt valueForKey:@"created_at"];
+             r.thumbURL = [receipt valueForKey:@"thumb_image_url"];
              [self.receipts addObject:r];
-             [receiptsTable reloadData];
+             [receiptsCollection reloadData];
          }
          
          [self.spinnerView removeFromSuperview];
-         [receiptsTable.pullToRefreshView stopAnimating];
+         [receiptsCollection.pullToRefreshView stopAnimating];
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          [self.spinnerView removeFromSuperview];
@@ -336,35 +341,22 @@
     return newImage;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.receipts.count / 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.receipts.count;
+    return 2;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [receiptsTable dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-    
-    Receipt *r = [self.receipts objectAtIndex:indexPath.row];
-    
-    [cell.textLabel setText:r.name];
-    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
-    
+    Receipt *r = [receipts objectAtIndex:indexPath.section];
+    ReceiptImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ReceiptImageCell" forIndexPath:indexPath];
+//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:r.thumbURL]];
+//    cell.receiptThumb.image = [UIImage imageWithData:imageData];
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
 }
 
 @end

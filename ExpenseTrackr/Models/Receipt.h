@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSString *imageFileName;
 @property (nonatomic, retain) NSString *createdAt;
+@property (nonatomic, retain) NSString *thumbURL;
 
 @end

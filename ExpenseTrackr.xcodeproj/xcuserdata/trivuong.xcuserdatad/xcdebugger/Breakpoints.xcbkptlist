@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ExpenseTrackr/Controllers/Receipts/ReceiptsViewController.m"
-         timestampString = "374390629.586287"
+         timestampString = "374985588.795698"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "161"
-         endingLineNumber = "161"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "-postReceiptImage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,12 +99,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ExpenseTrackr/Controllers/Receipts/ReceiptsViewController.m"
-         timestampString = "374390629.586287"
+         timestampString = "374985588.795698"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-fetchReceiptsFromServer"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ExpenseTrackr/Cells/ReceiptImageCell.h"
+         timestampString = "374903300.903308"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "11"
+         endingLineNumber = "11"
+         landmarkName = "@interface ReceiptImageCell"
+         landmarkType = "2">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ExpenseTrackr/Controllers/Receipts/ReceiptsViewController.m"
+         timestampString = "374985588.795698"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "344"
+         endingLineNumber = "344"
+         landmarkName = "-numberOfSectionsInCollectionView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
