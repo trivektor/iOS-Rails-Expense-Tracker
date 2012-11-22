@@ -62,12 +62,14 @@
     
     [self.navigationItem setRightBarButtonItem:newReceipt];
     
-    self.receiptsGridView = [[AQGridView alloc] initWithFrame:CGRectMake(0, 4, 320, 544)];
+    self.receiptsGridView = [[AQGridView alloc] initWithFrame:CGRectMake(0, 0, 320, 548)];
     self.receiptsGridView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     self.receiptsGridView.autoresizesSubviews = NO;
     self.receiptsGridView.dataSource = self;
     self.receiptsGridView.delegate = self;
     [self.view addSubview:self.receiptsGridView];
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"gray_jean.png"]]];
 }
 
 - (void)setDelegates
@@ -358,7 +360,7 @@
     
     ReceiptImageCell *cell = (ReceiptImageCell *)[gridView dequeueReusableCellWithIdentifier:@"ReceiptImageCell"];
     if (cell == NULL) {
-        cell = [[ReceiptImageCell alloc] initWithFrame:CGRectMake(0.0, 0.0, 140, 140) reuseIdentifier:@"ReceiptImageCell"];
+        cell = [[ReceiptImageCell alloc] initWithFrame:CGRectMake(0.0, 0.0, 110, 85) reuseIdentifier:@"ReceiptImageCell"];
     }
     
     NSString *thumbURL = [r.thumbURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];

@@ -102,6 +102,7 @@
 		B5AAD690165DED6D00D5352E /* AQGridSelectionGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD678165DED6D00D5352E /* AQGridSelectionGreen.png */; };
 		B5AAD691165DED6D00D5352E /* AQGridSelectionRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD679165DED6D00D5352E /* AQGridSelectionRed.png */; };
 		B5AAD692165DED6D00D5352E /* embed_png.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD67B165DED6D00D5352E /* embed_png.sh */; };
+		B5AAD69C165E9C6A00D5352E /* gray_jean.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD69B165E9C6A00D5352E /* gray_jean.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +265,7 @@
 		B5AAD678165DED6D00D5352E /* AQGridSelectionGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionGreen.png; sourceTree = "<group>"; };
 		B5AAD679165DED6D00D5352E /* AQGridSelectionRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionRed.png; sourceTree = "<group>"; };
 		B5AAD67B165DED6D00D5352E /* embed_png.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = embed_png.sh; sourceTree = "<group>"; };
+		B5AAD69B165E9C6A00D5352E /* gray_jean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_jean.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,7 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B5AAD69B165E9C6A00D5352E /* gray_jean.png */,
 				B5236EA7164F96EE002F2486 /* camera_icon.png */,
 				B54DE25416339D8C00798A25 /* list_icon.png */,
 				B502DAED162BC5EF00DD98DB /* add_button.png */,
@@ -704,6 +707,7 @@
 				B5AAD690165DED6D00D5352E /* AQGridSelectionGreen.png in Resources */,
 				B5AAD691165DED6D00D5352E /* AQGridSelectionRed.png in Resources */,
 				B5AAD692165DED6D00D5352E /* embed_png.sh in Resources */,
+				B5AAD69C165E9C6A00D5352E /* gray_jean.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

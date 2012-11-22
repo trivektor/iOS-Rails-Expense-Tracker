@@ -17,11 +17,11 @@
     self = [super initWithFrame: frame reuseIdentifier: aReuseIdentifier];
     if ( self)
     {
-        UIView* mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 118, 81)];
+        UIView* mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 85)];
         [mainView setBackgroundColor:[UIColor clearColor]];
-        UIImageView *frameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(9, 4, 100, 75)];
+        UIImageView *frameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 110, 85)];
         //[frameImageView setImage:[UIImage imageNamed:@"tab-mask.png"]];
-        self.receiptThumb = [[UIImageView alloc] initWithFrame:CGRectMake(13, 8, 100, 84)];
+        self.receiptThumb = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 100, 75)];
         //self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(13, 92, 127, 21)];
         //[captionLabel setFont:[UIFont systemFontOfSize:14]];
         [mainView addSubview:self.receiptThumb];
