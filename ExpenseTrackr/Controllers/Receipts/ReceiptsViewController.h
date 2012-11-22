@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AQGridView.h"
 
-@interface ReceiptsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-{
-    
-    __weak IBOutlet UICollectionView *receiptsCollection;
-}
+@interface ReceiptsViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AQGridViewDataSource, AQGridViewDelegate>
 
 @property (nonatomic, retain) UIView *spinnerView;
 @property (nonatomic, retain) NSMutableArray *receipts;
+@property (nonatomic, retain) IBOutlet AQGridView *receiptsGridView;
 
 - (void)performHouseKeepingTasks;
 - (void)setDelegates;

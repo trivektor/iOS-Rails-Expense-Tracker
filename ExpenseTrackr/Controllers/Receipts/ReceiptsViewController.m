@@ -15,6 +15,8 @@
 #import "SVPullToRefresh.h"
 #import "Receipt.h"
 #import "ReceiptImageCell.h"
+#import "AQGridViewController.h"
+#import "AQGridViewCell.h"
 
 @interface ReceiptsViewController ()
 
@@ -22,7 +24,7 @@
 
 @implementation ReceiptsViewController
 
-@synthesize spinnerView, receipts;
+@synthesize spinnerView, receipts, receiptsGridView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,22 +61,21 @@
     [newReceipt setTintColor:[UIColor blackColor]];
     
     [self.navigationItem setRightBarButtonItem:newReceipt];
-
-    [receiptsCollection registerNib:[UINib nibWithNibName:@"ReceiptImageCell" bundle:nil] forCellWithReuseIdentifier:@"ReceiptImageCell"];
-    [receiptsCollection registerClass:[ReceiptImageCell class] forCellWithReuseIdentifier:@"ReceiptImageCell"];
+    
+    self.receiptsGridView = [[AQGridView alloc] initWithFrame:CGRectMake(0, 4, 320, 544)];
+    self.receiptsGridView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    self.receiptsGridView.autoresizesSubviews = NO;
+    self.receiptsGridView.dataSource = self;
+    self.receiptsGridView.delegate = self;
+    [self.view addSubview:self.receiptsGridView];
 }
 
 - (void)setDelegates
 {
-    [receiptsCollection setDelegate:self];
-    [receiptsCollection setDataSource:self];
 }
 
 - (void)setupPullToRefresh
 {
-    [receiptsCollection addPullToRefreshWithActionHandler:^{
-        [self fetchReceiptsFromServer];
-    }];
 }
 
 - (void)fetchReceiptsFromServer
@@ -115,11 +116,11 @@
              r.createdAt = [receipt valueForKey:@"created_at"];
              r.thumbURL = [receipt valueForKey:@"thumb_image_url"];
              [self.receipts addObject:r];
-             [receiptsCollection reloadData];
          }
          
+         [self.receiptsGridView reloadData];
          [self.spinnerView removeFromSuperview];
-         [receiptsCollection.pullToRefreshView stopAnimating];
+
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          [self.spinnerView removeFromSuperview];
@@ -341,21 +342,31 @@
     return newImage;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.receipts.count / 2;
+- (CGSize)portraitGridCellSizeForGridView:(AQGridView *)gridView
+{
+    return CGSizeMake(140, 140);
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSUInteger)numberOfItemsInGridView:(AQGridView *)gridView
 {
-    return 2;
+    return receipts.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (AQGridViewCell *)gridView:(AQGridView *)gridView cellForItemAtIndex:(NSUInteger)index
 {
-    Receipt *r = [receipts objectAtIndex:indexPath.section];
-    ReceiptImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ReceiptImageCell" forIndexPath:indexPath];
-//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:r.thumbURL]];
-//    cell.receiptThumb.image = [UIImage imageWithData:imageData];
+    Receipt *r = [self.receipts objectAtIndex:index];
+    
+    ReceiptImageCell *cell = (ReceiptImageCell *)[gridView dequeueReusableCellWithIdentifier:@"ReceiptImageCell"];
+    if (cell == NULL) {
+        cell = [[ReceiptImageCell alloc] initWithFrame:CGRectMake(0.0, 0.0, 140, 140) reuseIdentifier:@"ReceiptImageCell"];
+    }
+    
+    NSString *thumbURL = [r.thumbURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:thumbURL]];
+    
+    [cell.receiptThumb setImage:[UIImage imageWithData:imageData]];
+    
     return cell;
 }
 

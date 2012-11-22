@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AQGridViewCell.h"
 
-@interface ReceiptImageCell : UICollectionViewCell
-{
-    
-}
+@interface ReceiptImageCell : AQGridViewCell
 
-@property (nonatomic, retain) IBOutlet UIImageView *receiptThumb;
+@property (nonatomic, retain) UIImageView *receiptThumb;
 
 @end

@@ -10,6 +10,28 @@
 
 @implementation ReceiptImageCell
 
+@synthesize receiptThumb;
+
+- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)aReuseIdentifier
+{
+    self = [super initWithFrame: frame reuseIdentifier: aReuseIdentifier];
+    if ( self)
+    {
+        UIView* mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 118, 81)];
+        [mainView setBackgroundColor:[UIColor clearColor]];
+        UIImageView *frameImageView = [[UIImageView alloc] initWithFrame:CGRectMake(9, 4, 100, 75)];
+        //[frameImageView setImage:[UIImage imageNamed:@"tab-mask.png"]];
+        self.receiptThumb = [[UIImageView alloc] initWithFrame:CGRectMake(13, 8, 100, 84)];
+        //self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(13, 92, 127, 21)];
+        //[captionLabel setFont:[UIFont systemFontOfSize:14]];
+        [mainView addSubview:self.receiptThumb];
+        [mainView addSubview:frameImageView];
+        //[mainView addSubview:captionLabel];
+        [self.contentView addSubview:mainView];
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
