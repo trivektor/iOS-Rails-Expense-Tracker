@@ -17,6 +17,7 @@
 #import "ReceiptImageCell.h"
 #import "AQGridViewController.h"
 #import "AQGridViewCell.h"
+#import "ReceiptViewController.h"
 
 @interface ReceiptsViewController ()
 
@@ -112,11 +113,13 @@
          for (NSDictionary *receipt in receiptsJSON) {
              
              r = [[Receipt alloc] init];
-             r.receiptId = [[receipt valueForKey:@"id"] intValue];
-             r.name = [receipt valueForKey:@"name"];
-             r.description = [receipt valueForKey:@"description"];
-             r.createdAt = [receipt valueForKey:@"created_at"];
-             r.thumbURL = [receipt valueForKey:@"thumb_image_url"];
+             r.receiptId        = [[receipt valueForKey:@"id"] intValue];
+             r.name             = [receipt valueForKey:@"name"];
+             r.description      = [receipt valueForKey:@"description"];
+             r.createdAt        = [receipt valueForKey:@"created_at"];
+             r.thumbImageURL    = [receipt valueForKey:@"thumb_image_url"];
+             r.mediumImageURL   = [receipt valueForKey:@"medium_image_url"];
+             r.fullImageURL     = [receipt valueForKey:@"full_image_url"];
              [self.receipts addObject:r];
          }
          
@@ -363,13 +366,25 @@
         cell = [[ReceiptImageCell alloc] initWithFrame:CGRectMake(0.0, 0.0, 110, 85) reuseIdentifier:@"ReceiptImageCell"];
     }
     
-    NSString *thumbURL = [r.thumbURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSString *thumbImageURL = [r.thumbImageURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:thumbURL]];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:thumbImageURL]];
     
     [cell.receiptThumb setImage:[UIImage imageWithData:imageData]];
     
     return cell;
+}
+
+- (void)gridView:(AQGridView *)gridView didDeselectItemAtIndex:(NSUInteger)index
+{
+    ReceiptViewController *receiptController = [[ReceiptViewController alloc] init];
+    
+    receiptController.receipt = [self.receipts objectAtIndex:index];
+    receiptController.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
+    
+    UINavigationController *newNavController = [[UINavigationController alloc] initWithRootViewController:receiptController];
+    
+    [self presentViewController:newNavController animated:YES completion:nil];
 }
 
 @end

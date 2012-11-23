@@ -103,6 +103,8 @@
 		B5AAD691165DED6D00D5352E /* AQGridSelectionRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD679165DED6D00D5352E /* AQGridSelectionRed.png */; };
 		B5AAD692165DED6D00D5352E /* embed_png.sh in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD67B165DED6D00D5352E /* embed_png.sh */; };
 		B5AAD69C165E9C6A00D5352E /* gray_jean.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD69B165E9C6A00D5352E /* gray_jean.png */; };
+		B5AAD6A0165E9DA800D5352E /* ReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD69E165E9DA700D5352E /* ReceiptViewController.m */; };
+		B5AAD6A1165E9DA800D5352E /* ReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +268,9 @@
 		B5AAD679165DED6D00D5352E /* AQGridSelectionRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AQGridSelectionRed.png; sourceTree = "<group>"; };
 		B5AAD67B165DED6D00D5352E /* embed_png.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = embed_png.sh; sourceTree = "<group>"; };
 		B5AAD69B165E9C6A00D5352E /* gray_jean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_jean.png; sourceTree = "<group>"; };
+		B5AAD69D165E9DA700D5352E /* ReceiptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptViewController.h; sourceTree = "<group>"; };
+		B5AAD69E165E9DA700D5352E /* ReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptViewController.m; sourceTree = "<group>"; };
+		B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +490,9 @@
 				B5236E93164E37BB002F2486 /* ReceiptsViewController.h */,
 				B5236E94164E37BB002F2486 /* ReceiptsViewController.m */,
 				B5236E95164E37BB002F2486 /* ReceiptsViewController.xib */,
+				B5AAD69D165E9DA700D5352E /* ReceiptViewController.h */,
+				B5AAD69E165E9DA700D5352E /* ReceiptViewController.m */,
+				B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */,
 			);
 			path = Receipts;
 			sourceTree = "<group>";
@@ -708,6 +716,7 @@
 				B5AAD691165DED6D00D5352E /* AQGridSelectionRed.png in Resources */,
 				B5AAD692165DED6D00D5352E /* embed_png.sh in Resources */,
 				B5AAD69C165E9C6A00D5352E /* gray_jean.png in Resources */,
+				B5AAD6A1165E9DA800D5352E /* ReceiptViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +774,7 @@
 				B5AAD688165DED6D00D5352E /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
 				B5AAD689165DED6D00D5352E /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				B5AAD68A165DED6D00D5352E /* UIColor+AQGridView.m in Sources */,
+				B5AAD6A0165E9DA800D5352E /* ReceiptViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

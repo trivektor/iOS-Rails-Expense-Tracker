@@ -10,6 +10,6 @@
 
 @implementation Receipt
 
-@synthesize receiptId, name, description, imageFileName, createdAt, thumbURL;
+@synthesize receiptId, name, description, imageFileName, createdAt, thumbImageURL, fullImageURL, mediumImageURL;
 
 @end
