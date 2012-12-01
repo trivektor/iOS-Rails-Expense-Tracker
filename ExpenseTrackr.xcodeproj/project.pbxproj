@@ -105,6 +105,8 @@
 		B5AAD69C165E9C6A00D5352E /* gray_jean.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD69B165E9C6A00D5352E /* gray_jean.png */; };
 		B5AAD6A0165E9DA800D5352E /* ReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD69E165E9DA700D5352E /* ReceiptViewController.m */; };
 		B5AAD6A1165E9DA800D5352E /* ReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */; };
+		B5AAD6B91669E4EF00D5352E /* magma.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6B81669E4EE00D5352E /* magma.png */; };
+		B5AAD6BF1669EBC300D5352E /* magma_border.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6BE1669EBC300D5352E /* magma_border.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +273,8 @@
 		B5AAD69D165E9DA700D5352E /* ReceiptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptViewController.h; sourceTree = "<group>"; };
 		B5AAD69E165E9DA700D5352E /* ReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptViewController.m; sourceTree = "<group>"; };
 		B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptViewController.xib; sourceTree = "<group>"; };
+		B5AAD6B81669E4EE00D5352E /* magma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magma.png; sourceTree = "<group>"; };
+		B5AAD6BE1669EBC300D5352E /* magma_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magma_border.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +397,8 @@
 		B502DA921629258400DD98DB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B5AAD6BE1669EBC300D5352E /* magma_border.png */,
+				B5AAD6B81669E4EE00D5352E /* magma.png */,
 				B5AAD69B165E9C6A00D5352E /* gray_jean.png */,
 				B5236EA7164F96EE002F2486 /* camera_icon.png */,
 				B54DE25416339D8C00798A25 /* list_icon.png */,
@@ -717,6 +723,8 @@
 				B5AAD692165DED6D00D5352E /* embed_png.sh in Resources */,
 				B5AAD69C165E9C6A00D5352E /* gray_jean.png in Resources */,
 				B5AAD6A1165E9DA800D5352E /* ReceiptViewController.xib in Resources */,
+				B5AAD6B91669E4EF00D5352E /* magma.png in Resources */,
+				B5AAD6BF1669EBC300D5352E /* magma_border.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

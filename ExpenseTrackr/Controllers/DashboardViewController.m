@@ -53,6 +53,8 @@
 - (void)performHouseKeepingTasks
 {
     [self.navigationItem setTitle:@"More Options"];
+    [optionsTable setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"magma.png"]]];
+    [optionsTable setSeparatorColor:[UIColor clearColor]];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -73,10 +75,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
     [cell.textLabel setText:[self.options objectAtIndex:indexPath.row]];
     [cell setSelectionStyle:UITableViewCellEditingStyleNone];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"magma_border.png"]]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
