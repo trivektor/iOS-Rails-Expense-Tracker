@@ -11,6 +11,7 @@
 #import "IIViewDeckController.h"
 #import "ExpensesViewController.h"
 #import "ReceiptsViewController.h"
+#import "FeedbackViewController.h"
 #import "KeychainHelper.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
@@ -32,6 +33,7 @@
         self.options = [[NSMutableArray alloc] initWithCapacity:0];
         [self.options addObject:@"Expenses"];
         [self.options addObject:@"Receipts"];
+        [self.options addObject:@"Feedback"];
         [self.options addObject:@"Sign out"];
     }
     return self;
@@ -54,7 +56,7 @@
 {
     [self.navigationItem setTitle:@"More Options"];
     [optionsTable setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"magma.png"]]];
-    [optionsTable setSeparatorColor:[UIColor clearColor]];
+    [optionsTable setSeparatorColor:[UIColor clearColor]];    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -75,6 +77,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
+    NSString *icon = [[self.options objectAtIndex:indexPath.row] lowercaseString];
+    
+    [cell.imageView setImage:[UIImage imageNamed:[icon stringByAppendingString:@"_icon.png"]]];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
     [cell.textLabel setText:[self.options objectAtIndex:indexPath.row]];
     [cell setSelectionStyle:UITableViewCellEditingStyleNone];
@@ -103,6 +108,9 @@
         } else if (indexPath.row == 1) {
             ReceiptsViewController *receiptsController = [[ReceiptsViewController alloc] init];
             newController = [[UINavigationController alloc] initWithRootViewController:receiptsController];
+        } else if (indexPath.row == 2) {
+            FeedbackViewController *feedbackController = [[FeedbackViewController alloc] init];
+            newController = [[UINavigationController alloc] initWithRootViewController:feedbackController];
         }
         
         [newController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header.png"] forBarMetrics:UIBarMetricsDefault];

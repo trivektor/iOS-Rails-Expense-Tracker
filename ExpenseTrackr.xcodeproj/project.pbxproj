@@ -107,6 +107,16 @@
 		B5AAD6A1165E9DA800D5352E /* ReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */; };
 		B5AAD6B91669E4EF00D5352E /* magma.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6B81669E4EE00D5352E /* magma.png */; };
 		B5AAD6BF1669EBC300D5352E /* magma_border.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6BE1669EBC300D5352E /* magma_border.png */; };
+		B5AAD6D71669EE6200D5352E /* expenses_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6D61669EE6200D5352E /* expenses_icon.png */; };
+		B5AAD6D91669EF2700D5352E /* receipts_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6D81669EF2700D5352E /* receipts_icon.png */; };
+		B5AAD6DD1669EFD100D5352E /* sign out_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6DC1669EFD100D5352E /* sign out_icon.png */; };
+		B5AAD6DF1669F09400D5352E /* list_bullets.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6DE1669F09400D5352E /* list_bullets.png */; };
+		B5AAD6E11669F23700D5352E /* expenses_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6E01669F23700D5352E /* expenses_icon.png */; };
+		B5AAD6E31669F2D100D5352E /* feedback_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6E21669F2D100D5352E /* feedback_icon.png */; };
+		B5AAD6E51669F33300D5352E /* receipts_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6E41669F33300D5352E /* receipts_icon.png */; };
+		B5AAD6E71669F36100D5352E /* feedback_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6E61669F36100D5352E /* feedback_icon.png */; };
+		B5AAD6F3166AFD8800D5352E /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6F1166AFD8800D5352E /* FeedbackViewController.m */; };
+		B5AAD6F4166AFD8800D5352E /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6F2166AFD8800D5352E /* FeedbackViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +285,17 @@
 		B5AAD69F165E9DA700D5352E /* ReceiptViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptViewController.xib; sourceTree = "<group>"; };
 		B5AAD6B81669E4EE00D5352E /* magma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magma.png; sourceTree = "<group>"; };
 		B5AAD6BE1669EBC300D5352E /* magma_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magma_border.png; sourceTree = "<group>"; };
+		B5AAD6D61669EE6200D5352E /* expenses_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expenses_icon.png; sourceTree = "<group>"; };
+		B5AAD6D81669EF2700D5352E /* receipts_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = receipts_icon.png; sourceTree = "<group>"; };
+		B5AAD6DC1669EFD100D5352E /* sign out_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign out_icon.png"; sourceTree = "<group>"; };
+		B5AAD6DE1669F09400D5352E /* list_bullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_bullets.png; sourceTree = "<group>"; };
+		B5AAD6E01669F23700D5352E /* expenses_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expenses_icon.png; sourceTree = "<group>"; };
+		B5AAD6E21669F2D100D5352E /* feedback_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback_icon.png; sourceTree = "<group>"; };
+		B5AAD6E41669F33300D5352E /* receipts_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = receipts_icon.png; sourceTree = "<group>"; };
+		B5AAD6E61669F36100D5352E /* feedback_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback_icon.png; sourceTree = "<group>"; };
+		B5AAD6F0166AFD8700D5352E /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		B5AAD6F1166AFD8800D5352E /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		B5AAD6F2166AFD8800D5352E /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +391,9 @@
 				B502DA881629207B00DD98DB /* CustomTableCellViewController.h */,
 				B502DA891629207B00DD98DB /* CustomTableCellViewController.m */,
 				B502DA8A1629207B00DD98DB /* CustomTableCellViewController.xib */,
+				B5AAD6F0166AFD8700D5352E /* FeedbackViewController.h */,
+				B5AAD6F1166AFD8800D5352E /* FeedbackViewController.m */,
+				B5AAD6F2166AFD8800D5352E /* FeedbackViewController.xib */,
 				B502DA8D1629254300DD98DB /* HomeViewController.h */,
 				B502DA8E1629254400DD98DB /* HomeViewController.m */,
 				B502DA8F1629254400DD98DB /* HomeViewController.xib */,
@@ -398,7 +422,15 @@
 			isa = PBXGroup;
 			children = (
 				B5AAD6BE1669EBC300D5352E /* magma_border.png */,
+				B5AAD6D81669EF2700D5352E /* receipts_icon.png */,
+				B5AAD6E01669F23700D5352E /* expenses_icon.png */,
 				B5AAD6B81669E4EE00D5352E /* magma.png */,
+				B5AAD6E21669F2D100D5352E /* feedback_icon.png */,
+				B5AAD6DE1669F09400D5352E /* list_bullets.png */,
+				B5AAD6E61669F36100D5352E /* feedback_icon.png */,
+				B5AAD6D61669EE6200D5352E /* expenses_icon.png */,
+				B5AAD6DC1669EFD100D5352E /* sign out_icon.png */,
+				B5AAD6E41669F33300D5352E /* receipts_icon.png */,
 				B5AAD69B165E9C6A00D5352E /* gray_jean.png */,
 				B5236EA7164F96EE002F2486 /* camera_icon.png */,
 				B54DE25416339D8C00798A25 /* list_icon.png */,
@@ -725,6 +757,15 @@
 				B5AAD6A1165E9DA800D5352E /* ReceiptViewController.xib in Resources */,
 				B5AAD6B91669E4EF00D5352E /* magma.png in Resources */,
 				B5AAD6BF1669EBC300D5352E /* magma_border.png in Resources */,
+				B5AAD6D71669EE6200D5352E /* expenses_icon.png in Resources */,
+				B5AAD6D91669EF2700D5352E /* receipts_icon.png in Resources */,
+				B5AAD6DD1669EFD100D5352E /* sign out_icon.png in Resources */,
+				B5AAD6DF1669F09400D5352E /* list_bullets.png in Resources */,
+				B5AAD6E11669F23700D5352E /* expenses_icon.png in Resources */,
+				B5AAD6E31669F2D100D5352E /* feedback_icon.png in Resources */,
+				B5AAD6E51669F33300D5352E /* receipts_icon.png in Resources */,
+				B5AAD6E71669F36100D5352E /* feedback_icon.png in Resources */,
+				B5AAD6F4166AFD8800D5352E /* FeedbackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +824,7 @@
 				B5AAD689165DED6D00D5352E /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				B5AAD68A165DED6D00D5352E /* UIColor+AQGridView.m in Sources */,
 				B5AAD6A0165E9DA800D5352E /* ReceiptViewController.m in Sources */,
+				B5AAD6F3166AFD8800D5352E /* FeedbackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
