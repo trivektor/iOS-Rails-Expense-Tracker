@@ -12,6 +12,7 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "SpinnerView.h"
+#import "ReceiptCell.h"
 #import "SVPullToRefresh.h"
 #import "Receipt.h"
 #import "ReceiptImageCell.h"
@@ -25,7 +26,7 @@
 
 @implementation ReceiptsViewController
 
-@synthesize spinnerView, receipts, receiptsGridView;
+@synthesize spinnerView, receipts;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,18 +64,16 @@
     
     [self.navigationItem setRightBarButtonItem:newReceipt];
     
-    self.receiptsGridView = [[AQGridView alloc] initWithFrame:CGRectMake(0, 0, 320, 548)];
-    self.receiptsGridView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    self.receiptsGridView.autoresizesSubviews = NO;
-    self.receiptsGridView.dataSource = self;
-    self.receiptsGridView.delegate = self;
-    [self.view addSubview:self.receiptsGridView];
+    // Use ReceiptCell for the receipts table instead of the default UITableViewCell
+    UINib *nib = [UINib nibWithNibName:@"ReceiptCell" bundle:nil];
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"gray_jean.png"]]];
+    [receiptsTable registerNib:nib forCellReuseIdentifier:@"ReceiptCell"];
 }
 
 - (void)setDelegates
 {
+    [receiptsTable setDelegate:self];
+    [receiptsTable setDataSource:self];
 }
 
 - (void)setupPullToRefresh
@@ -123,9 +122,8 @@
              [self.receipts addObject:r];
          }
          
-         [self.receiptsGridView reloadData];
          [self.spinnerView removeFromSuperview];
-
+         [receiptsTable reloadData];
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          [self.spinnerView removeFromSuperview];
@@ -347,44 +345,55 @@
     return newImage;
 }
 
-- (CGSize)portraitGridCellSizeForGridView:(AQGridView *)gridView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return CGSizeMake(140, 140);
+    return 1;
 }
 
-- (NSUInteger)numberOfItemsInGridView:(AQGridView *)gridView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return receipts.count;
+    return self.receipts.count;
 }
 
-- (AQGridViewCell *)gridView:(AQGridView *)gridView cellForItemAtIndex:(NSUInteger)index
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Receipt *r = [self.receipts objectAtIndex:index];
+    return 72;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ReceiptCell *cell = [receiptsTable dequeueReusableCellWithIdentifier:@"ReceiptCell"];
     
-    ReceiptImageCell *cell = (ReceiptImageCell *)[gridView dequeueReusableCellWithIdentifier:@"ReceiptImageCell"];
-    if (cell == NULL) {
-        cell = [[ReceiptImageCell alloc] initWithFrame:CGRectMake(0.0, 0.0, 110, 85) reuseIdentifier:@"ReceiptImageCell"];
+    if (!cell) {
+        cell = [[ReceiptCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ReceiptCell"];
     }
     
-    NSString *thumbImageURL = [r.thumbImageURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
     
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:thumbImageURL]];
+    Receipt *r = [self.receipts objectAtIndex:indexPath.row];
     
-    [cell.receiptThumb setImage:[UIImage imageWithData:imageData]];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:r.thumbImageURL]];
+    
+    [cell.receiptImage setImage:[UIImage imageWithData:imageData]];
+    
+    // Rounded corners for receipt image
+    // http://stackoverflow.com/questions/262156/uiimage-rounded-corners
+    // UIGraphicsBeginImageContextWithOptions(cell.receiptImage.bounds.size, NO, 1.0);
+    // [[UIBezierPath bezierPathWithRoundedRect:cell.receiptImage.bounds cornerRadius:5.0] addClip];
+    // [cell.receiptImage drawRect:cell.receiptImage.bounds];
+    // [cell.receiptImage setImage: UIGraphicsGetImageFromCurrentImageContext()];
+    // UIGraphicsEndImageContext();
+    
+    [cell.receiptImage.layer setBorderColor:[[UIColor colorWithRed:55/255.0 green:55/255.0 blue:55/255.0 alpha:1.0] CGColor]];
+    [cell.receiptImage.layer setBorderWidth:1.0];
+    [cell.receiptImage.layer setCornerRadius:5.0];
+    [cell.receiptImage setClipsToBounds:YES];
+    
+    // Receipt name and date
+    [cell.receiptNameLabel setText:r.name];
+    [cell.receiptDateLabel setText:r.createdAt];
     
     return cell;
-}
-
-- (void)gridView:(AQGridView *)gridView didDeselectItemAtIndex:(NSUInteger)index
-{
-    ReceiptViewController *receiptController = [[ReceiptViewController alloc] init];
-    
-    receiptController.receipt = [self.receipts objectAtIndex:index];
-    receiptController.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
-    
-    UINavigationController *newNavController = [[UINavigationController alloc] initWithRootViewController:receiptController];
-    
-    [self presentViewController:newNavController animated:YES completion:nil];
 }
 
 @end

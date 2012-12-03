@@ -117,6 +117,8 @@
 		B5AAD6E71669F36100D5352E /* feedback_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6E61669F36100D5352E /* feedback_icon.png */; };
 		B5AAD6F3166AFD8800D5352E /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6F1166AFD8800D5352E /* FeedbackViewController.m */; };
 		B5AAD6F4166AFD8800D5352E /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6F2166AFD8800D5352E /* FeedbackViewController.xib */; };
+		B5AAD6F6166BFF8D00D5352E /* ReceiptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6F5166BFF8D00D5352E /* ReceiptCell.xib */; };
+		B5AAD6F9166C14C000D5352E /* ReceiptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6F8166C14C000D5352E /* ReceiptCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +298,9 @@
 		B5AAD6F0166AFD8700D5352E /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		B5AAD6F1166AFD8800D5352E /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		B5AAD6F2166AFD8800D5352E /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
+		B5AAD6F5166BFF8D00D5352E /* ReceiptCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptCell.xib; sourceTree = "<group>"; };
+		B5AAD6F7166C14C000D5352E /* ReceiptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptCell.h; sourceTree = "<group>"; };
+		B5AAD6F8166C14C000D5352E /* ReceiptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,6 +551,9 @@
 				B54DE249163314A800798A25 /* ExpenseDetailCell.m */,
 				B568C4031658487E000B3DF4 /* ReceiptImageCell.h */,
 				B568C4041658487E000B3DF4 /* ReceiptImageCell.m */,
+				B5AAD6F5166BFF8D00D5352E /* ReceiptCell.xib */,
+				B5AAD6F7166C14C000D5352E /* ReceiptCell.h */,
+				B5AAD6F8166C14C000D5352E /* ReceiptCell.m */,
 			);
 			name = Cells;
 			path = ExpenseTrackr/Cells;
@@ -766,6 +774,7 @@
 				B5AAD6E51669F33300D5352E /* receipts_icon.png in Resources */,
 				B5AAD6E71669F36100D5352E /* feedback_icon.png in Resources */,
 				B5AAD6F4166AFD8800D5352E /* FeedbackViewController.xib in Resources */,
+				B5AAD6F6166BFF8D00D5352E /* ReceiptCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,6 +834,7 @@
 				B5AAD68A165DED6D00D5352E /* UIColor+AQGridView.m in Sources */,
 				B5AAD6A0165E9DA800D5352E /* ReceiptViewController.m in Sources */,
 				B5AAD6F3166AFD8800D5352E /* FeedbackViewController.m in Sources */,
+				B5AAD6F9166C14C000D5352E /* ReceiptCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
