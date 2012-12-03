@@ -125,12 +125,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ExpenseTrackr/Controllers/Receipts/ReceiptsViewController.m"
-         timestampString = "376186881.12097"
+         timestampString = "376185256.445097"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "398"
-         endingLineNumber = "398"
-         landmarkName = "-gridView:cellForItemAtIndex:"
+         startingLineNumber = "354"
+         endingLineNumber = "354"
+         landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

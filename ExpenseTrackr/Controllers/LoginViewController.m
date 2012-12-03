@@ -17,6 +17,7 @@
 #import "AppConfig.h"
 #import "KeychainItemWrapper.h"
 #import "KeychainHelper.h"
+#import "AlertifyView.h"
 
 @interface LoginViewController ()
 
@@ -123,7 +124,7 @@
 - (void)login
 {
     if (emailTextField.text.length == 0 || passwordTextField.text.length == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Please enter both email and password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        AlertifyView *alert = [[AlertifyView alloc] initWithTitle:@"Alert" message:@"Please enter both email and password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
         [alert show];
     } else {
@@ -142,7 +143,7 @@
         
         NSMutableURLRequest *postRequest = [httpClient requestWithMethod:@"POST" path:signinURL.absoluteString parameters:params];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        AlertifyView *alert = [[AlertifyView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:postRequest];
         
@@ -153,10 +154,7 @@
              NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
              
              if ([[json valueForKey:@"success"] intValue] == 1) {
-                 [alert setMessage:[json valueForKey:@"message"]];
-                 
                  NSString *token = [json valueForKey:@"auth_token"];
-                 NSLog(@"%@", token);
                  
                  [KeychainHelper setAuthenticationToken:token];
                  
@@ -172,9 +170,9 @@
                  [self.view.window setRootViewController:navController];
              } else {
                  [alert setTitle:@"Error"];
-                 [alert setMessage:[json valueForKey:@"errors"]];
              }
              
+             [alert setMessage:[json valueForKey:@"message"]];
              [alert show];
              [self.spinnerView removeFromSuperview];
          }

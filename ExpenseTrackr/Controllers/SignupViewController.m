@@ -85,8 +85,8 @@
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:signupURL];
     
     NSMutableDictionary *userParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       firstNameTextField.text, @"first_name",
-                                       lastNameTextField.text, @"last_name",
+                                       //firstNameTextField.text, @"first_name",
+                                       //lastNameTextField.text, @"last_name",
                                        emailTextField.text, @"email",
                                     passwordTextField.text, @"password",
                             confirmPasswordTextField.text, @"password_confirmation",

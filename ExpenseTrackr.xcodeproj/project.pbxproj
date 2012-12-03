@@ -119,6 +119,7 @@
 		B5AAD6F4166AFD8800D5352E /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6F2166AFD8800D5352E /* FeedbackViewController.xib */; };
 		B5AAD6F6166BFF8D00D5352E /* ReceiptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6F5166BFF8D00D5352E /* ReceiptCell.xib */; };
 		B5AAD6F9166C14C000D5352E /* ReceiptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6F8166C14C000D5352E /* ReceiptCell.m */; };
+		B5AAD6FC166C330F00D5352E /* AlertifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6FB166C330F00D5352E /* AlertifyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,6 +302,8 @@
 		B5AAD6F5166BFF8D00D5352E /* ReceiptCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptCell.xib; sourceTree = "<group>"; };
 		B5AAD6F7166C14C000D5352E /* ReceiptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptCell.h; sourceTree = "<group>"; };
 		B5AAD6F8166C14C000D5352E /* ReceiptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptCell.m; sourceTree = "<group>"; };
+		B5AAD6FA166C330F00D5352E /* AlertifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertifyView.h; sourceTree = "<group>"; };
+		B5AAD6FB166C330F00D5352E /* AlertifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertifyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +495,8 @@
 				B502DAD8162A8F6700DD98DB /* KeychainItemWrapper.m */,
 				B50E49E9163C41CE009A86BB /* KeychainHelper.h */,
 				B50E49EA163C41CE009A86BB /* KeychainHelper.m */,
+				B5AAD6FA166C330F00D5352E /* AlertifyView.h */,
+				B5AAD6FB166C330F00D5352E /* AlertifyView.m */,
 			);
 			name = Classes;
 			path = ExpenseTrackr/Classes;
@@ -835,6 +840,7 @@
 				B5AAD6A0165E9DA800D5352E /* ReceiptViewController.m in Sources */,
 				B5AAD6F3166AFD8800D5352E /* FeedbackViewController.m in Sources */,
 				B5AAD6F9166C14C000D5352E /* ReceiptCell.m in Sources */,
+				B5AAD6FC166C330F00D5352E /* AlertifyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@
 #import "SpinnerView.h"
 #import "KeychainItemWrapper.h"
 #import "KeychainHelper.h"
+#import "AlertifyView.h"
 
 @interface NewExpenseViewController ()
 
@@ -167,7 +168,7 @@
         ^(AFHTTPRequestOperation *operation, id responseObject){
             NSString *response = [operation responseString];
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            AlertifyView *alert = [[AlertifyView alloc] initWithTitle:@"Alert" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
             
