@@ -120,6 +120,12 @@
 		B5AAD6F6166BFF8D00D5352E /* ReceiptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6F5166BFF8D00D5352E /* ReceiptCell.xib */; };
 		B5AAD6F9166C14C000D5352E /* ReceiptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6F8166C14C000D5352E /* ReceiptCell.m */; };
 		B5AAD6FC166C330F00D5352E /* AlertifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AAD6FB166C330F00D5352E /* AlertifyView.m */; };
+		B5AAD6FE166C3C0C00D5352E /* chrome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6FD166C3C0C00D5352E /* chrome_bg.png */; };
+		B5AAD700166C3E2700D5352E /* chrome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD6FF166C3E2700D5352E /* chrome_bg.png */; };
+		B5AAD702166C4E4200D5352E /* chrome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD701166C4E4200D5352E /* chrome_bg.png */; };
+		B5AAD704166C5E1000D5352E /* feedback_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD703166C5E1000D5352E /* feedback_icon.png */; };
+		B5AAD706166C5E1F00D5352E /* receipts_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD705166C5E1F00D5352E /* receipts_icon.png */; };
+		B5AAD708166C5EBA00D5352E /* sign out_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5AAD707166C5EBA00D5352E /* sign out_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +310,12 @@
 		B5AAD6F8166C14C000D5352E /* ReceiptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptCell.m; sourceTree = "<group>"; };
 		B5AAD6FA166C330F00D5352E /* AlertifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertifyView.h; sourceTree = "<group>"; };
 		B5AAD6FB166C330F00D5352E /* AlertifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertifyView.m; sourceTree = "<group>"; };
+		B5AAD6FD166C3C0C00D5352E /* chrome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrome_bg.png; sourceTree = "<group>"; };
+		B5AAD6FF166C3E2700D5352E /* chrome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrome_bg.png; sourceTree = "<group>"; };
+		B5AAD701166C4E4200D5352E /* chrome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrome_bg.png; sourceTree = "<group>"; };
+		B5AAD703166C5E1000D5352E /* feedback_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback_icon.png; sourceTree = "<group>"; };
+		B5AAD705166C5E1F00D5352E /* receipts_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = receipts_icon.png; sourceTree = "<group>"; };
+		B5AAD707166C5EBA00D5352E /* sign out_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign out_icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,11 +443,17 @@
 			children = (
 				B5AAD6BE1669EBC300D5352E /* magma_border.png */,
 				B5AAD6D81669EF2700D5352E /* receipts_icon.png */,
+				B5AAD6FD166C3C0C00D5352E /* chrome_bg.png */,
+				B5AAD703166C5E1000D5352E /* feedback_icon.png */,
+				B5AAD6FF166C3E2700D5352E /* chrome_bg.png */,
 				B5AAD6E01669F23700D5352E /* expenses_icon.png */,
 				B5AAD6B81669E4EE00D5352E /* magma.png */,
 				B5AAD6E21669F2D100D5352E /* feedback_icon.png */,
 				B5AAD6DE1669F09400D5352E /* list_bullets.png */,
+				B5AAD707166C5EBA00D5352E /* sign out_icon.png */,
 				B5AAD6E61669F36100D5352E /* feedback_icon.png */,
+				B5AAD705166C5E1F00D5352E /* receipts_icon.png */,
+				B5AAD701166C4E4200D5352E /* chrome_bg.png */,
 				B5AAD6D61669EE6200D5352E /* expenses_icon.png */,
 				B5AAD6DC1669EFD100D5352E /* sign out_icon.png */,
 				B5AAD6E41669F33300D5352E /* receipts_icon.png */,
@@ -780,6 +798,12 @@
 				B5AAD6E71669F36100D5352E /* feedback_icon.png in Resources */,
 				B5AAD6F4166AFD8800D5352E /* FeedbackViewController.xib in Resources */,
 				B5AAD6F6166BFF8D00D5352E /* ReceiptCell.xib in Resources */,
+				B5AAD6FE166C3C0C00D5352E /* chrome_bg.png in Resources */,
+				B5AAD700166C3E2700D5352E /* chrome_bg.png in Resources */,
+				B5AAD702166C4E4200D5352E /* chrome_bg.png in Resources */,
+				B5AAD704166C5E1000D5352E /* feedback_icon.png in Resources */,
+				B5AAD706166C5E1F00D5352E /* receipts_icon.png in Resources */,
+				B5AAD708166C5EBA00D5352E /* sign out_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

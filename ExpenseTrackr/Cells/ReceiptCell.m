@@ -28,4 +28,14 @@
     // Configure the view for the selected state
 }
 
+- (void)awakeFromNib
+{
+    receiptImage.layer.shadowColor = [[UIColor blackColor] CGColor];
+    receiptImage.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    receiptImage.layer.shadowOpacity = 1.0;
+    receiptImage.layer.shadowRadius = 5.0;
+    receiptImage.clipsToBounds = NO;
+    receiptImage.layer.masksToBounds = NO;
+}
+
 @end

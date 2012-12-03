@@ -13,6 +13,8 @@
 @interface ReceiptsViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     
+    
+    __weak IBOutlet UISearchBar *receiptsSearchBox;
     __weak IBOutlet UITableView *receiptsTable;
 }
 

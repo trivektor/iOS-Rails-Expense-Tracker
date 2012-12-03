@@ -376,24 +376,53 @@
     
     [cell.receiptImage setImage:[UIImage imageWithData:imageData]];
     
-    // Rounded corners for receipt image
-    // http://stackoverflow.com/questions/262156/uiimage-rounded-corners
-    // UIGraphicsBeginImageContextWithOptions(cell.receiptImage.bounds.size, NO, 1.0);
-    // [[UIBezierPath bezierPathWithRoundedRect:cell.receiptImage.bounds cornerRadius:5.0] addClip];
-    // [cell.receiptImage drawRect:cell.receiptImage.bounds];
-    // [cell.receiptImage setImage: UIGraphicsGetImageFromCurrentImageContext()];
-    // UIGraphicsEndImageContext();
+    // http://stackoverflow.com/questions/11724517/add-round-corner-to-uiimageview-and-display-shadow-effect
+    CGFloat cornerRadius = 3.0;
     
-    [cell.receiptImage.layer setBorderColor:[[UIColor colorWithRed:55/255.0 green:55/255.0 blue:55/255.0 alpha:1.0] CGColor]];
-    [cell.receiptImage.layer setBorderWidth:1.0];
-    [cell.receiptImage.layer setCornerRadius:5.0];
-    [cell.receiptImage setClipsToBounds:YES];
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(9, 11, 50, 50)];
+    container.layer.shadowOffset = CGSizeMake(0, 1);
+    container.layer.shadowOpacity = 0.5f;
+    container.layer.shadowRadius = 2.0;
+    container.layer.shadowColor = [UIColor blackColor].CGColor;
+    container.layer.shadowPath = [[UIBezierPath bezierPathWithRoundedRect:container.bounds cornerRadius:cornerRadius] CGPath];
+    
+    CALayer *layer = cell.receiptImage.layer;
+    
+    layer.cornerRadius = cornerRadius;
+    layer.masksToBounds = YES;
+    layer.borderWidth = 3.0;
+    layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.receiptImage.frame = container.bounds;
+    [container addSubview:cell.receiptImage];
+    [cell.contentView addSubview:container];
     
     // Receipt name and date
     [cell.receiptNameLabel setText:r.name];
     [cell.receiptDateLabel setText:r.createdAt];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[cell setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"chrome_bg.png"]]];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([receiptsSearchBox isFirstResponder]) {
+        [receiptsSearchBox resignFirstResponder];
+    }
 }
 
 @end
