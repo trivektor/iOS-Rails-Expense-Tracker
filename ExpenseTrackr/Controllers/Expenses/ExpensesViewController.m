@@ -45,6 +45,9 @@
     [self performHouseKeepingTasks];
     [self setupPullToRefresh];
     [self fetchExpensesFromServer];
+    
+    self.view.layer.cornerRadius = 5.0;
+    self.view.layer.masksToBounds = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,7 +77,7 @@
     
     UINib *nib = [UINib nibWithNibName:@"ExpenseCell" bundle:nil];
     
-    [expensesTable registerNib:nib forCellReuseIdentifier:@"ExpenseCell"];
+    [expensesTable registerNib:nib forCellReuseIdentifier:@"ExpenseCell"];    
 }
 
 - (void)setupPullToRefresh

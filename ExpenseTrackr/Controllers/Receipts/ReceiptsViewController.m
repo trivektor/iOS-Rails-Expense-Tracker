@@ -68,6 +68,19 @@
     UINib *nib = [UINib nibWithNibName:@"ReceiptCell" bundle:nil];
     
     [receiptsTable registerNib:nib forCellReuseIdentifier:@"ReceiptCell"];
+    
+    for (UIView *subview in receiptsSearchBox.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            UIView *bg = [[UIView alloc] initWithFrame:subview.frame];
+            bg.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"search_box_bg.png"]];
+            [receiptsSearchBox insertSubview:bg aboveSubview:subview];
+            [subview removeFromSuperview];
+            break;
+        }
+    }
+    
+    self.view.layer.cornerRadius = 5.0;
+    self.view.layer.masksToBounds = YES;
 }
 
 - (void)setDelegates

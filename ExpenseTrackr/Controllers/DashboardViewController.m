@@ -33,6 +33,7 @@
         self.options = [[NSMutableArray alloc] initWithCapacity:0];
         [self.options addObject:@"Expenses"];
         [self.options addObject:@"Receipts"];
+        [self.options addObject:@"Invite"];
         [self.options addObject:@"Feedback"];
         [self.options addObject:@"Sign out"];
     }
@@ -56,7 +57,8 @@
 {
     [self.navigationItem setTitle:@"More Options"];
     [optionsTable setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"magma.png"]]];
-    [optionsTable setSeparatorColor:[UIColor clearColor]];    
+    [optionsTable setSeparatorColor:[UIColor clearColor]];
+    [optionsTable setScrollEnabled:NO];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -36,7 +36,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUITableView" id="573386797">
+					<object class="IBUITableView" id="685862501">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, 44}, {320, 504}}</string>
@@ -57,7 +57,7 @@
 						<float key="IBUISectionHeaderHeight">22</float>
 						<float key="IBUISectionFooterHeight">22</float>
 					</object>
-					<object class="IBUISearchBar" id="8552436">
+					<object class="IBUISearchBar" id="594888492">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 44}</string>
@@ -117,7 +117,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">receiptsTable</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="573386797"/>
+						<reference key="destination" ref="685862501"/>
 					</object>
 					<int key="connectionID">46</int>
 				</object>
@@ -125,7 +125,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">receiptsSearchBox</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="8552436"/>
+						<reference key="destination" ref="594888492"/>
 					</object>
 					<int key="connectionID">48</int>
 				</object>
@@ -142,8 +142,8 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="573386797"/>
-							<reference ref="8552436"/>
+							<reference ref="685862501"/>
+							<reference ref="594888492"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -160,12 +160,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">45</int>
-						<reference key="object" ref="573386797"/>
+						<reference key="object" ref="685862501"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">47</int>
-						<reference key="object" ref="8552436"/>
+						<reference key="object" ref="594888492"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
